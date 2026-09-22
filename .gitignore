@@ -1,0 +1,7 @@
+# Exclude file raksasa (>100MB limit GitHub) - tidak dipakai index.html
+IMAGE/MODUL/MODUL-3.pdf
+
+# Opsional: file mentah tak terpakai
+*.HEIC
+.DS_Store
+Thumbs.db
