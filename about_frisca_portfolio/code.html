@@ -1,0 +1,313 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>About Frisca - DKV Student &amp; Visual Creator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;family=Syne:wght@700;800&amp;family=Montserrat:wght@700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffba38",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "inverse-on-surface": "#ffecf3",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#1e1c00",
+                        "on-primary-container": "#fffbff",
+                        "surface": "#FFFFFF",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#ffd8ea",
+                        "outline-variant": "#dfbdcd",
+                        "surface-container-high": "#fce1ed",
+                        "error": "#E53935",
+                        "inverse-primary": "#ffaeda",
+                        "on-surface": "#26171f",
+                        "background": "#F7F4EF",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#3c2c34",
+                        "secondary-fixed": "#f3e700",
+                        "primary": "#ae0083",
+                        "surface-tint": "#b30086",
+                        "success": "#20B26B",
+                        "surface-container-low": "#fff0f5",
+                        "text-main": "#1A1A1A",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#58404c",
+                        "on-tertiary-fixed": "#281900",
+                        "border-accent": "#D8BFF3",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-dim": "#eed3de",
+                        "on-primary-fixed": "#3c002b",
+                        "secondary": "#666000",
+                        "surface-container": "#ffe8f1",
+                        "on-background": "#26171f",
+                        "tertiary-container": "#9b6b00",
+                        "surface-bright": "#fff8f8",
+                        "tertiary-fixed": "#ffdeac",
+                        "on-secondary-fixed-variant": "#4d4800",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffaeda",
+                        "on-secondary-container": "#6a6500",
+                        "tertiary": "#7b5500",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#da00a4",
+                        "outline": "#8b6f7d",
+                        "on-primary-fixed-variant": "#890066",
+                        "surface-variant": "#f6dbe7",
+                        "surface-container-highest": "#f6dbe7",
+                        "secondary-container": "#f0e400",
+                        "secondary-fixed-dim": "#d5ca00",
+                        "text-muted": "#666666"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "5xl": "120px",
+                        "xl": "32px",
+                        "4xl": "96px",
+                        "3xl": "64px",
+                        "xs": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Be Vietnam Pro"],
+                        "headline-lg": ["Syne"],
+                        "headline-md": ["Syne"],
+                        "headline-xl-mobile": ["Syne"],
+                        "headline-xl": ["Syne"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "body-sm": ["Be Vietnam Pro"],
+                        "montserrat": ["Montserrat", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "fontWeight": "600" }],
+                        "headline-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["48px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "headline-xl": ["96px", { "lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Decorative grid background to enhance scrapbook feel */
+        .bg-grid-pattern {
+            background-size: 24px 24px;
+            background-image: linear-gradient(to right, rgba(139, 111, 125, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(139, 111, 125, 0.1) 1px, transparent 1px);
+        }
+        
+        /* Custom hard shadow utility for brutalist/scrapbook elements */
+        .hard-shadow-primary {
+            box-shadow: 4px 4px 0px 0px var(--color-primary, #ae0083);
+        }
+        .hard-shadow-black {
+            box-shadow: 4px 4px 0px 0px var(--color-on-surface, #26171f);
+        }
+        .hard-shadow-black-lg {
+            box-shadow: 8px 8px 0px 0px var(--color-on-surface, #26171f);
+        }
+        
+        /* Specific text stroke for hero */
+        .text-stroke-secondary {
+            -webkit-text-stroke: 2px var(--color-secondary-fixed, #f3e700);
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface bg-grid-pattern min-h-screen flex flex-col font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md sticky top-0 w-full z-50 border-b-2 border-primary shadow-[4px_4px_0px_0px_rgba(174,0,131,1)]">
+<nav class="flex justify-between items-center px-lg py-md max-w-7xl mx-auto w-full">
+<div class="font-headline-md text-headline-md font-black text-primary uppercase tracking-tighter cursor-pointer hover:scale-105 hover:rotate-1 transition-transform duration-200 active:translate-y-1 active:shadow-none">
+                FRISCA
+            </div>
+<ul class="hidden md:flex items-center gap-xl font-headline-md text-headline-md">
+<li><a class="text-on-surface hover:text-primary transition-colors hover:scale-105 hover:rotate-1 transition-transform duration-200 inline-block active:translate-y-1 active:shadow-none" href="#">Home</a></li>
+<!-- Active State Applied Here -->
+<li><a class="text-primary font-bold border-b-2 border-secondary hover:scale-105 hover:rotate-1 transition-transform duration-200 inline-block active:translate-y-1 active:shadow-none" href="#">About</a></li>
+<li><a class="text-on-surface hover:text-primary transition-colors hover:scale-105 hover:rotate-1 transition-transform duration-200 inline-block active:translate-y-1 active:shadow-none" href="#">Works</a></li>
+</ul>
+<button class="hidden md:inline-flex bg-primary text-on-primary px-lg py-sm rounded-full font-label-sm text-label-sm uppercase tracking-wider border-2 border-on-surface hard-shadow-black hover:bg-secondary-fixed hover:text-on-secondary-fixed hover:scale-105 hover:rotate-1 transition-all active:translate-y-1 active:shadow-none">
+                Let's Talk
+            </button>
+<!-- Mobile Menu Icon (Simulated) -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-4xl">menu</span>
+</button>
+</nav>
+</header>
+<main class="flex-grow w-full">
+<!-- Hero & Bio Section -->
+<section class="max-w-7xl mx-auto px-md md:px-lg pt-4xl pb-2xl grid grid-cols-1 md:grid-cols-12 gap-2xl items-center">
+<!-- Left: Portrait Photo (Polaroid Style) -->
+<div class="col-span-1 md:col-span-5 relative group perspective-1000">
+<!-- Decorative background elements behind photo -->
+<div class="absolute -inset-4 bg-secondary-fixed border-2 border-on-surface rounded-xl rotate-3 hard-shadow-black z-0"></div>
+<div class="absolute -inset-2 bg-primary-fixed border-2 border-on-surface rounded-xl -rotate-2 z-0"></div>
+<div class="relative bg-surface p-md border-2 border-on-surface rounded-sm hard-shadow-black-lg z-10 -rotate-1 transition-transform hover:rotate-0 duration-300">
+<!-- Faux Tape -->
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 w-xl h-md bg-white/60 backdrop-blur-sm border border-on-surface/20 rotate-2 z-20 shadow-sm"></div>
+<div class="aspect-[4/5] bg-surface-variant overflow-hidden border border-on-surface relative">
+<img class="object-cover w-full h-full grayscale-[20%] contrast-125" data-alt="A portrait photograph of a young creative design student with a bright, expressive smile, framed in a vintage Polaroid style. The lighting is high-key and studio-quality, emphasizing vibrant Y2K aesthetics. The background features a textured paper-like feel in soft lavender and pastel yellow tones, giving a tactile, physical scrapbook quality. The subject wears colorful, quirky fashion reflecting a bold maximalist-lite personality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7ta7B1wTQDbrTwp-M-aVz6xImfhNYeOitrThhIM6G6LW5TJNfZi6_8zo_G2t0aqQtL0aQE-Rpbyxkva72P0y66jl5vGpTzAeOSJasunFsLNTLS73aAfpS2L5xB4hyJrf3hWOOQPcqJ6QvRxnqTh_EXvZcqawGnrvJqIsL6s6RmFA-2q1SAGvQUmn-7AC3gWCNYSHHOb21weFWfU072K2E8mtnE2ugRUdgBzqTWLFxHCWUEN7hI0M0">
+<!-- Decorative doodles overlaid -->
+<div class="absolute bottom-4 right-4 bg-secondary-fixed text-on-secondary-fixed px-sm py-xs border-2 border-on-surface rounded-full rotate-[-15deg] font-label-sm text-label-sm font-bold shadow-[2px_2px_0px_0px_#26171f]">
+                            IT'S ME! <span class="material-symbols-outlined text-sm align-middle">star</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Biography -->
+<div class="col-span-1 md:col-span-7 flex flex-col items-start relative z-10 pl-0 md:pl-lg">
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-primary font-black mb-sm drop-shadow-[4px_4px_0px_#f3e700] rotate-[-2deg] tracking-tighter">
+                    HELLO!
+                </h1>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-xl max-w-2xl bg-surface p-sm border-2 border-on-surface inline-block rotate-[1deg] hard-shadow-primary">
+                    I'm Frisca — a DKV student and visual creator.
+                </h2>
+<div class="relative bg-surface-variant p-lg border-2 border-on-surface rounded-xl hard-shadow-black max-w-2xl mb-2xl rotate-[-1deg]">
+<!-- Folded corner effect (simulated with absolute element) -->
+<div class="absolute top-0 right-0 w-8 h-8 bg-background border-b-2 border-l-2 border-on-surface rounded-bl-lg"></div>
+<p class="font-body-md text-body-md text-on-surface relative z-10 leading-relaxed">
+                        I'm a Visual Communication Design student who enjoys illustration, graphic design, photography, video editing, and visual storytelling. I love experimenting with different visual styles and turning simple ideas into engaging creative work.
+                    </p>
+</div>
+<!-- Personal Philosophy Banner -->
+<div class="bg-secondary-fixed px-lg py-sm border-2 border-on-surface rounded-full hard-shadow-black rotate-[2deg] hover:scale-105 transition-transform cursor-default w-full max-w-2xl text-center flex justify-center items-center">
+<span class="font-montserrat text-on-surface uppercase tracking-tight font-bold text-center block w-full" style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 32px; line-height: 1.2;">
+                        Create with Purpose. Design with Personality.
+                    </span>
+</div>
+</div>
+</section>
+<!-- Creative Interests (Sticker Cloud) -->
+<section class="max-w-7xl mx-auto px-md md:px-lg py-3xl relative">
+<div class="text-center mb-xl">
+<h3 class="font-headline-lg text-headline-lg text-on-surface inline-block relative">
+                    My Toolbelt
+                    <div class="absolute -bottom-2 left-0 w-full h-sm bg-primary-fixed -z-10 rotate-[-2deg]"></div>
+</h3>
+</div>
+<div class="flex flex-wrap gap-md justify-center items-center py-lg max-w-4xl mx-auto">
+<!-- Generating stickers with varying colors, rotations, and shapes -->
+<div class="bg-primary text-on-primary px-xl py-sm border-2 border-on-surface rounded-full font-label-sm text-label-sm uppercase font-bold hard-shadow-black rotate-[-3deg] hover:scale-110 transition-transform cursor-pointer">
+                    Illustration <span class="material-symbols-outlined align-middle ml-xs text-sm">draw</span>
+</div>
+<div class="bg-secondary-fixed text-on-surface px-xl py-sm border-2 border-on-surface rounded-full font-label-sm text-label-sm uppercase font-bold hard-shadow-black rotate-[4deg] hover:scale-110 transition-transform cursor-pointer">
+                    Graphic Design
+                </div>
+<div class="bg-surface text-on-surface px-xl py-sm border-2 border-primary rounded-md font-label-sm text-label-sm uppercase font-bold hard-shadow-primary rotate-[-1deg] hover:scale-110 transition-transform cursor-pointer">
+                    Branding
+                </div>
+<div class="bg-tertiary-fixed text-on-surface px-xl py-sm border-2 border-on-surface rounded-[20px_4px_20px_4px] font-label-sm text-label-sm uppercase font-bold hard-shadow-black rotate-[2deg] hover:scale-110 transition-transform cursor-pointer">
+                    Packaging <span class="material-symbols-outlined align-middle ml-xs text-sm">package</span>
+</div>
+<div class="bg-primary-fixed text-on-surface px-xl py-sm border-2 border-on-surface rounded-full font-label-sm text-label-sm uppercase font-bold hard-shadow-black rotate-[-5deg] hover:scale-110 transition-transform cursor-pointer">
+                    Video Editing
+                </div>
+<div class="bg-surface-variant text-on-surface px-xl py-sm border-2 border-on-surface rounded-full font-label-sm text-label-sm uppercase font-bold shadow-[4px_4px_0px_0px_#f3e700] rotate-[3deg] hover:scale-110 transition-transform cursor-pointer">
+                    Photography <span class="material-symbols-outlined align-middle ml-xs text-sm">photo_camera</span>
+</div>
+<div class="bg-secondary-fixed text-on-surface px-xl py-sm border-2 border-on-surface rounded-full font-label-sm text-label-sm uppercase font-bold hard-shadow-black rotate-[-2deg] hover:scale-110 transition-transform cursor-pointer">
+                    Social Media
+                </div>
+<div class="bg-primary text-on-primary px-xl py-sm border-2 border-on-surface rounded-full font-label-sm text-label-sm uppercase font-bold hard-shadow-black rotate-[1deg] hover:scale-110 transition-transform cursor-pointer">
+                    Visual Storytelling
+                </div>
+</div>
+</section>
+<!-- Experience Journey Timeline -->
+<section class="max-w-4xl mx-auto px-md md:px-lg py-4xl">
+<h3 class="font-headline-lg text-headline-lg text-on-surface text-center mb-2xl">
+                The Journey <span class="text-primary material-symbols-outlined text-[64px] align-middle">route</span>
+</h3>
+<div class="relative pl-lg md:pl-0">
+<!-- Vertical Line (Dashed/Doodle style simulated) -->
+<div class="absolute top-0 bottom-0 left-lg md:left-1/2 w-1 border-l-4 border-dashed border-primary -translate-x-1/2"></div>
+<div class="flex flex-col gap-2xl relative z-10">
+<!-- 2024 -->
+<div class="flex flex-col md:flex-row items-center w-full group">
+<div class="w-full md:w-1/2 flex justify-start md:justify-end pr-0 md:pr-xl mb-md md:mb-0 pl-xl md:pl-0 relative">
+<!-- Timeline Dot -->
+<div class="absolute left-[-22px] md:left-auto md:right-[-22px] top-1/2 -translate-y-1/2 w-xl h-xl bg-secondary-fixed border-4 border-on-surface rounded-full z-20 group-hover:bg-primary transition-colors"></div>
+<div class="bg-surface border-2 border-on-surface p-lg rounded-xl hard-shadow-primary w-full max-w-[320px] rotate-[1deg] group-hover:-translate-y-1 transition-transform">
+<span class="font-headline-md text-headline-md text-primary block mb-xs">2024</span>
+<p class="font-body-md text-body-md text-on-surface">Started exploring the vast world of visual design.</p>
+</div>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+</div>
+<!-- 2025 (Early) -->
+<div class="flex flex-col md:flex-row items-center w-full group">
+<div class="hidden md:block md:w-1/2"></div>
+<div class="w-full md:w-1/2 flex justify-start pl-xl md:pl-xl relative">
+<!-- Timeline Dot -->
+<div class="absolute left-[-22px] md:left-[-18px] top-1/2 -translate-y-1/2 w-xl h-xl bg-tertiary-fixed border-4 border-on-surface rounded-full z-20 group-hover:bg-primary transition-colors"></div>
+<div class="bg-surface-variant border-2 border-on-surface p-lg rounded-xl hard-shadow-black w-full max-w-[320px] rotate-[-2deg] group-hover:-translate-y-1 transition-transform">
+<span class="font-headline-md text-headline-md text-on-surface block mb-xs">2025</span>
+<p class="font-body-md text-body-md text-on-surface">Developed core skills in graphic design and digital illustration.</p>
+</div>
+</div>
+</div>
+<!-- 2025 (Late) -->
+<div class="flex flex-col md:flex-row items-center w-full group">
+<div class="w-full md:w-1/2 flex justify-start md:justify-end pr-0 md:pr-xl mb-md md:mb-0 pl-xl md:pl-0 relative">
+<!-- Timeline Dot -->
+<div class="absolute left-[-22px] md:left-auto md:right-[-22px] top-1/2 -translate-y-1/2 w-xl h-xl bg-secondary-fixed border-4 border-on-surface rounded-full z-20 group-hover:bg-primary transition-colors"></div>
+<div class="bg-surface border-2 border-on-surface p-lg rounded-xl shadow-[4px_4px_0px_0px_#9b6b00] w-full max-w-[320px] rotate-[2deg] group-hover:-translate-y-1 transition-transform">
+<span class="font-headline-md text-headline-md text-primary block mb-xs">2025</span>
+<p class="font-body-md text-body-md text-on-surface">Joined the <span class="font-bold bg-secondary-fixed px-1">Black Broadcast</span> extracurricular team.</p>
+</div>
+</div>
+<div class="hidden md:block md:w-1/2"></div>
+</div>
+<!-- 2026 -->
+<div class="flex flex-col md:flex-row items-center w-full group">
+<div class="hidden md:block md:w-1/2"></div>
+<div class="w-full md:w-1/2 flex justify-start pl-xl md:pl-xl relative">
+<!-- Timeline Dot -->
+<div class="absolute left-[-22px] md:left-[-18px] top-1/2 -translate-y-1/2 w-xl h-xl bg-primary-fixed border-4 border-on-surface rounded-full z-20 group-hover:bg-primary transition-colors"></div>
+<div class="bg-primary text-on-primary border-2 border-on-surface p-lg rounded-xl hard-shadow-black w-full max-w-[320px] rotate-[-1deg] group-hover:-translate-y-1 transition-transform">
+<span class="font-headline-md text-headline-md text-secondary-fixed block mb-xs">2026</span>
+<p class="font-body-md text-body-md text-on-primary">Expanded heavily into content creation, photography, and comprehensive visual storytelling.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-secondary-fixed dark:bg-secondary-fixed-dim w-full mt-2xl border-t-2 border-on-secondary-fixed">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg py-xl gap-md w-full max-w-7xl mx-auto">
+<div class="font-headline-md text-headline-md text-on-secondary-fixed hover:skew-x-2 transition-transform cursor-pointer">
+                FRISCA
+            </div>
+<div class="font-body-sm text-body-sm text-on-secondary-fixed text-center order-last md:order-none opacity-80">
+                © 2024 FRISCA. CREATED WITH LOVE &amp; STICKERS.
+            </div>
+<ul class="flex flex-wrap justify-center gap-md font-body-sm text-body-sm text-on-secondary-fixed">
+<li><a class="opacity-80 hover:opacity-100 hover:text-primary transition-all hover:skew-x-2 underline font-bold inline-block" href="#">Instagram</a></li>
+<li><a class="opacity-80 hover:opacity-100 hover:text-primary transition-all hover:skew-x-2 underline font-bold inline-block" href="#">Dribbble</a></li>
+<li><a class="opacity-80 hover:opacity-100 hover:text-primary transition-all hover:skew-x-2 underline font-bold inline-block" href="#">LinkedIn</a></li>
+<li><a class="opacity-80 hover:opacity-100 hover:text-primary transition-all hover:skew-x-2 underline font-bold inline-block" href="#">Email</a></li>
+</ul>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,934 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Frisca - Visual Creator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Be+Vietnam+Pro:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffba38",
+                        "on-tertiary-fixed-variant": "#604100",
+                        "inverse-on-surface": "#ffecf3",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed": "#1e1c00",
+                        "on-primary-container": "#fffbff",
+                        "surface": "#FFFFFF",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#ffd8ea",
+                        "outline-variant": "#dfbdcd",
+                        "surface-container-high": "#fce1ed",
+                        "error": "#E53935",
+                        "inverse-primary": "#ffaeda",
+                        "on-surface": "#26171f",
+                        "background": "#F7F4EF",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#3c2c34",
+                        "secondary-fixed": "#f3e700",
+                        "primary": "#ae0083",
+                        "surface-tint": "#b30086",
+                        "success": "#20B26B",
+                        "surface-container-low": "#fff0f5",
+                        "text-main": "#1A1A1A",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#58404c",
+                        "on-tertiary-fixed": "#281900",
+                        "border-accent": "#D8BFF3",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-dim": "#eed3de",
+                        "on-primary-fixed": "#3c002b",
+                        "secondary": "#666000",
+                        "surface-container": "#ffe8f1",
+                        "on-background": "#26171f",
+                        "tertiary-container": "#9b6b00",
+                        "surface-bright": "#fff8f8",
+                        "tertiary-fixed": "#ffdeac",
+                        "on-secondary-fixed-variant": "#4d4800",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#ffaeda",
+                        "on-secondary-container": "#6a6500",
+                        "tertiary": "#7b5500",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#da00a4",
+                        "outline": "#8b6f7d",
+                        "on-primary-fixed-variant": "#890066",
+                        "surface-variant": "#f6dbe7",
+                        "surface-container-highest": "#f6dbe7",
+                        "secondary-container": "#f0e400",
+                        "secondary-fixed-dim": "#d5ca00",
+                        "text-muted": "#666666"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "2xl": "48px",
+                        "sm": "8px",
+                        "lg": "24px",
+                        "5xl": "120px",
+                        "xl": "32px",
+                        "4xl": "96px",
+                        "3xl": "64px",
+                        "xs": "4px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Be Vietnam Pro"],
+                        "headline-lg": ["Syne"],
+                        "headline-md": ["Syne"],
+                        "headline-xl-mobile": ["Syne"],
+                        "headline-xl": ["Syne"],
+                        "body-md": ["Be Vietnam Pro"],
+                        "body-sm": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", { "fontWeight": "600" }],
+                        "headline-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "headline-md": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["48px", { "lineHeight": "1.1", "fontWeight": "800" }],
+                        "headline-xl": ["96px", { "lineHeight": "1.0", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .noise {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.03;
+            background-image: url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)"/%3E%3C/svg%3E');
+        }
+        
+        .marquee-container {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .sticker {
+            position: absolute;
+            filter: drop-shadow(2px 2px 0px rgba(0,0,0,1));
+            transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .sticker:hover {
+            transform: scale(1.1) rotate(5deg) !important;
+        }
+
+        .grid-bg {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(216, 191, 243, 0.2) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(216, 191, 243, 0.2) 1px, transparent 1px);
+        }
+
+        /* Modal Lightbox */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        .modal-overlay.open .modal-content {
+            transform: scale(1);
+        }
+        .modal-image {
+            display: block;
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .modal-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.2s, border-color 0.2s, transform 0.2s;
+        }
+        .modal-close:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: rotate(90deg);
+        }
+        .modal-close:focus {
+            outline: 2px solid #f3e700;
+            outline-offset: 2px;
+        }
+        .logo-design-img {
+            cursor: zoom-in;
+            transition: opacity 0.2s;
+        }
+        .logo-design-img:hover {
+            opacity: 0.9;
+        }
+        /* MY SKILL - skill bar animation */
+        .skill-card {
+            position: relative;
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+        }
+        .skill-card:hover {
+            background-color: #fffdf5;
+            box-shadow: 12px 12px 0px 0px rgba(38, 23, 31, 1);
+        }
+        .skill-logo {
+            position: relative;
+            background: #fff;
+            border: 2px solid #26171f;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .skill-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .skill-logo-btn {
+            cursor: pointer;
+            padding: 0;
+            font: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .skill-logo-btn::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -90%;
+            width: 70%;
+            height: 100%;
+            background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        .skill-logo-btn:hover {
+            transform: translateY(-3px) rotate(-3deg);
+            box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 1);
+            animation: tile-boing 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .skill-logo-btn:hover::after {
+            opacity: 1;
+            animation: shine-sweep 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes tile-boing {
+            0%   { transform: translateY(0) rotate(0deg) scale(1); }
+            40%  { transform: translateY(-9px) rotate(-6deg) scale(1.1); }
+            68%  { transform: translateY(-1px) rotate(3deg) scale(0.97); }
+            100% { transform: translateY(-3px) rotate(-3deg) scale(1); }
+        }
+        @keyframes shine-sweep {
+            0%   { left: -90%; }
+            100% { left: 135%; }
+        }
+        .skill-logo-btn:focus-visible {
+            outline: 3px solid #ae0083;
+            outline-offset: 3px;
+        }
+        .skill-bar {
+            width: 100%;
+            height: 14px;
+            background: #ece6f4;
+            border: 2px solid #26171f;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+        @keyframes skillFill {
+            from { width: 0; }
+            to { width: var(--skill); }
+        }
+        .skill-bar-fill {
+            position: relative;
+            height: 100%;
+            border-radius: 9999px;
+            background: #ae0083;
+            animation: skillFill 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+        .skill-bar-fill::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            background-image: repeating-linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0.4) 0 8px,
+                transparent 8px 16px
+            );
+        }
+        .skill-card:hover .skill-bar-fill::after {
+            animation: bar-stripes 0.6s linear infinite;
+        }
+        @keyframes bar-stripes {
+            from { background-position: 0 0; }
+            to   { background-position: 32px 0; }
+        }
+        .skill-pop {
+            position: absolute;
+            left: 50%;
+            bottom: calc(100% + 16px);
+            transform: translateX(-50%) scale(0.4);
+            transform-origin: bottom center;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 30;
+            background: #f3e700;
+            color: #26171f;
+            border: 2px solid #26171f;
+            border-radius: 9999px;
+            padding: 9px 18px;
+            font-weight: 800;
+            font-size: 20px;
+            line-height: 1;
+            white-space: nowrap;
+            box-shadow: 3px 3px 0px 0px rgba(0, 0, 0, 1);
+            transition: opacity 0.18s ease;
+        }
+        .skill-pop::before {
+            content: "\2726";
+            position: absolute;
+            top: -13px;
+            right: -6px;
+            font-size: 16px;
+            color: #ae0083;
+            transform: rotate(12deg);
+        }
+        .skill-pop::after {
+            content: "";
+            position: absolute;
+            top: calc(100% - 7px);
+            left: 50%;
+            width: 13px;
+            height: 13px;
+            transform: translateX(-50%) rotate(45deg);
+            background: #f3e700;
+            border-right: 2px solid #26171f;
+            border-bottom: 2px solid #26171f;
+            border-bottom-right-radius: 3px;
+        }
+        .skill-pop.is-open {
+            opacity: 1;
+            animation: skill-pop-in 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+                       skill-pop-float 2.6s ease-in-out 0.5s infinite alternate;
+        }
+        @keyframes skill-pop-in {
+            0%   { transform: translateX(-50%) scale(0.4) translateY(10px); opacity: 0; }
+            60%  { transform: translateX(-50%) scale(1.15) translateY(-3px); opacity: 1; }
+            100% { transform: translateX(-50%) scale(1) translateY(0); opacity: 1; }
+        }
+        @keyframes skill-pop-float {
+            0%   { transform: translateX(-50%) translateY(0) scale(1); }
+            100% { transform: translateX(-50%) translateY(-5px) scale(1.02); }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .skill-bar-fill { animation: none; width: var(--skill); }
+            .skill-bar-fill::after,
+            .skill-card:hover .skill-bar-fill::after { animation: none; }
+            .skill-pop.is-open { animation: none; }
+            .skill-logo-btn:hover { transform: none; animation: none; }
+            .skill-logo-btn:hover::after { animation: none; }
+            .skill-card:hover { box-shadow: none; }
+            .skills-blob { animation: none; }
+            .skills-doodle .material-symbols-outlined,
+            .skills-doodle:hover .material-symbols-outlined { animation: none; }
+        }
+        /* MY SKILL - colorful creative background */
+        .skills-bg {
+            background-color: #fff6ec;
+            background-image:
+                radial-gradient(circle at 10% 15%, rgba(243, 231, 0, 0.4) 0 80px, transparent 81px),
+                radial-gradient(circle at 90% 10%, rgba(174, 0, 131, 0.18) 0 110px, transparent 111px),
+                radial-gradient(circle at 6% 90%, rgba(216, 191, 243, 0.55) 0 130px, transparent 131px),
+                radial-gradient(circle at 95% 88%, rgba(113, 212, 255, 0.4) 0 120px, transparent 121px),
+                radial-gradient(circle at 50% 45%, rgba(243, 231, 0, 0.12) 0 180px, transparent 181px),
+                radial-gradient(#e8c4d4 1px, transparent 1px);
+            background-size: auto, auto, auto, auto, auto, 22px 22px;
+        }
+        .skills-doodle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #26171f;
+            box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+            font-variation-settings: 'FILL' 1;
+            user-select: none;
+            pointer-events: auto;
+            cursor: default;
+        }
+        .skills-blob {
+            animation: blob-drift 14s ease-in-out infinite alternate;
+        }
+        .skills-blob:nth-of-type(1) { animation-duration: 12s; animation-delay: 0s; }
+        .skills-blob:nth-of-type(2) { animation-duration: 16s; animation-delay: 0.6s; }
+        .skills-blob:nth-of-type(3) { animation-duration: 15s; animation-delay: 1.2s; }
+        .skills-blob:nth-of-type(4) { animation-duration: 13s; animation-delay: 1.8s; }
+        @keyframes blob-drift {
+            0%   { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(20px, -16px) scale(1.14); }
+        }
+        .skills-doodle .material-symbols-outlined {
+            animation: doodle-float 3.2s ease-in-out infinite alternate;
+            animation-delay: var(--d, 0s);
+        }
+        .skills-doodle:hover .material-symbols-outlined {
+            animation: doodle-wiggle 0.55s ease-in-out;
+        }
+        @keyframes doodle-float {
+            0%   { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-6px) rotate(-7deg); }
+        }
+        @keyframes doodle-wiggle {
+            0%   { transform: rotate(0deg) scale(1); }
+            25%  { transform: rotate(-14deg) scale(1.18); }
+            60%  { transform: rotate(11deg) scale(1.12); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+    </style>
+<style>
+                @keyframes float {
+                    0% { margin-top: 0px; }
+                    100% { margin-top: -5px; }
+                }
+            </style></head>
+<body class="bg-background text-on-background font-body-md min-h-screen relative overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<div class="noise"></div>
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-40 bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md border-b-2 border-primary shadow-[4px_4px_0px_0px_rgba(174,0,131,1)]">
+<div class="flex justify-between items-center px-lg py-md max-w-7xl mx-auto">
+<a class="font-headline-md text-headline-md font-black text-primary uppercase tracking-tighter hover:scale-105 hover:rotate-1 transition-transform duration-200 active:translate-y-1 active:shadow-none" href="#">FRISCA</a>
+<div class="hidden md:flex gap-lg items-center">
+<a class="text-primary font-bold border-b-2 border-secondary font-label-sm text-label-sm uppercase tracking-wide hover:scale-105 hover:rotate-1 transition-transform duration-200" href="#">Home</a>
+<a class="text-on-surface hover:text-primary transition-colors font-label-sm text-label-sm uppercase tracking-wide hover:scale-105 hover:rotate-1 transition-transform duration-200" href="#">About</a>
+<a class="text-on-surface hover:text-primary transition-colors font-label-sm text-label-sm uppercase tracking-wide hover:scale-105 hover:rotate-1 transition-transform duration-200" href="#">Works</a>
+</div>
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-lg py-sm rounded-full border-2 border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-secondary-fixed hover:text-black hover:scale-105 hover:-rotate-2 transition-all active:translate-y-1 active:shadow-none uppercase tracking-wide">
+                Let's Talk
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative pt-4xl pb-5xl px-lg max-w-7xl mx-auto grid-bg">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-2xl items-center">
+<!-- Left Column: Copy & CTA -->
+<div class="col-span-1 md:col-span-7 flex flex-col items-start gap-lg z-10 relative">
+<!-- Floating Decorative Sticker -->
+<div class="sticker bg-secondary-fixed text-black font-label-sm text-label-sm px-sm py-xs rounded-full border border-black transform -rotate-12 top-[-20px] left-[-20px]">
+                    HELLO WORLD!
+                </div>
+<h1 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface flex flex-col">
+<span class="block relative w-fit">
+                        HI, I'M FRISCA.
+                        <span class="absolute -bottom-2 left-0 w-full h-4 bg-tertiary-fixed-dim/50 -z-10 transform skew-x-12"></span>
+</span>
+<span class="block text-primary">VISUAL CREATOR.</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl text-lg leading-relaxed border-l-4 border-border-accent pl-md">
+                    DKV Student, Design Ilustrator, and Creative Media.<br>
+                    <span class="italic font-semibold text-primary">“Ideas in Motion, Creativity in Every Frame”</span><br>
+                    <span class="text-sm opacity-80">Ide yang bergerak, kreativitas di setiap frame.</span>
+                </p>
+<div class="flex flex-wrap gap-md mt-md">
+<button class="bg-primary text-on-primary font-label-sm text-label-sm px-xl py-md rounded-full border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-secondary-fixed hover:text-black hover:scale-105 hover:-rotate-2 transition-all active:translate-y-1 active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wide flex items-center gap-sm">
+                        VIEW MY WORKS
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">arrow_forward</span>
+</button>
+<button class="bg-surface text-on-surface font-label-sm text-label-sm px-xl py-md rounded-full border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-tertiary-fixed-dim hover:scale-105 hover:rotate-2 transition-all active:translate-y-1 active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wide">
+                        MORE ABOUT ME
+                    </button>
+</div>
+</div>
+<!-- Right Column: Portrait & Stickers -->
+<div class="col-span-1 md:col-span-5 relative mt-2xl md:mt-0 flex justify-center">
+<!-- Main Portrait Container -->
+<div class="relative w-64 h-80 md:w-80 md:h-96 rounded-[40px] border-4 border-black shadow-[8px_8px_0px_0px_rgba(174,0,131,1)] overflow-hidden transform rotate-3 hover:rotate-0 transition-transform duration-500 bg-surface z-10">
+<img class="w-full h-full object-cover" data-alt="A vibrant, high-energy photographic portrait of a young creative professional (Frisca) in a brightly lit studio. She is smiling confidently, wearing colorful, eclectic y2k-inspired streetwear. The lighting is crisp and punchy, highlighting the vivid colors. The background is a solid, soft lavender to match the cohesive bright, pop-art aesthetic of the design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUNobM4LdP5NboxJ0zf7Zn4i8wZZLcQTPPl4LTjYhaksZQkF6eELEQGX-LU_3M5C6nnU9blooukIryjJEHqCxovKp5HZ4tAxHWei2cI_Gvi19azfkBBBmrbu2lF2W7mR0OV4F-WzAjIdA5bU-pY1i5cTCYmQphBB8yZRt4BgMLYYF9Cjud_gesD-ZZLH-0Dyq6MpHgDdGz5PYl058N04EjcUsoiuCN42yLysIEvpJ7NuJWoat1ZKeN">
+</div>
+<!-- Stickers Layer -->
+<div class="sticker bg-secondary-fixed text-black font-label-sm text-label-sm px-md py-sm border-2 border-black rounded-full top-4 -left-12 transform -rotate-12 z-20 flex items-center gap-xs shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                    CREATIVE MODE: ON
+                </div>
+<div class="sticker bg-primary-fixed text-primary font-headline-md text-headline-md p-sm border-2 border-black rounded-full bottom-8 -right-8 transform rotate-12 z-20 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="sticker bg-tertiary-fixed-dim text-black font-label-sm text-label-sm px-md py-sm border-2 border-black rounded-full bottom-[-20px] left-4 transform -rotate-6 z-20 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                    GOOD VIBES
+                </div>
+<!-- Abstract Doodle SVG (Inline for immediate rendering) -->
+<svg class="absolute top-[-40px] right-[-20px] w-24 h-24 text-primary opacity-80 z-0 transform rotate-45" fill="none" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<path d="M50 10 C 20 40, 80 60, 50 90" stroke="currentColor" stroke-linecap="round" stroke-width="8"></path>
+<path d="M20 50 C 40 20, 60 80, 80 50" stroke="currentColor" stroke-linecap="round" stroke-width="8"></path>
+</svg>
+</div>
+</div>
+</section>
+<!-- Marquee Strip -->
+<div class="w-full bg-primary py-sm border-y-4 border-black marquee-container transform -rotate-1 shadow-lg my-xl relative z-20">
+<div class="marquee-content font-headline-md text-headline-md text-on-primary tracking-widest uppercase flex items-center gap-xl whitespace-nowrap">
+<span>ILLUSTRATION</span> <span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>GRAPHIC DESIGN</span> <span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>VISUAL STORYTELLING</span> <span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>CONTENT CREATION</span> <span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span>
+<!-- Duplicate for seamless loop -->
+<span>ILLUSTRATION</span> <span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>GRAPHIC DESIGN</span> <span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>VISUAL STORYTELLING</span> <span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>CONTENT CREATION</span> <span class="material-symbols-outlined text-secondary-fixed" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Selected Works Section -->
+<section class="py-4xl px-lg max-w-7xl mx-auto relative">
+<div class="flex items-end justify-between mb-2xl relative">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface relative inline-block">
+                MY SELECTED<br>WORKS
+                <!-- Decorative Script Doodle Placeholder -->
+<span class="absolute -top-6 -right-12 font-headline-md text-secondary-fixed transform rotate-12 opacity-80" style="font-family: 'Brush Script MT', cursive;">stuff</span>
+</h2>
+<a class="hidden md:flex items-center gap-xs font-label-sm text-label-sm text-primary hover:text-primary-container uppercase tracking-wide group" href="#">
+                VIEW ALL 
+                <span class="material-symbols-outlined transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+<!-- Asymmetric Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg auto-rows-[300px]">
+<!-- Project 1: LOGO DESIGN (Large Left) -->
+<a class="col-span-1 md:col-span-7 row-span-2 group relative block bg-surface rounded-[32px] border-2 border-black overflow-hidden shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(174,0,131,1)] transition-all duration-300" href="#">
+<div class="absolute inset-0 bg-surface-variant/20 p-sm">
+<div class="w-full h-full rounded-[24px] overflow-hidden border border-border-accent relative">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 logo-design-img" data-alt="LOGO DESIGN visual identity portfolio - logo" src="../IMAGE/ASA SUSHI LOGO-01.jpg" alt="LOGO DESIGN visual identity portfolio">
+<!-- Top Info Bar -->
+<div class="absolute top-0 left-0 w-full p-md flex justify-between items-start bg-gradient-to-b from-black/50 to-transparent">
+<span class="bg-secondary-fixed text-black font-label-sm text-label-sm px-md py-xs rounded-full border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">2026</span>
+<span class="bg-surface text-on-surface font-label-sm text-label-sm px-md py-xs rounded-full border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">Branding &amp; Packaging</span>
+</div>
+</div>
+</div>
+<!-- Bottom Content Panel -->
+<div class="absolute bottom-0 left-0 w-full bg-surface border-t-2 border-black p-lg transform translate-y-2 group-hover:translate-y-0 transition-transform">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-xs uppercase">LOGO DESIGN</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-sm">Creating distinctive visual identities through simple forms, thoughtful concepts, and meaningful details.</p>
+</div>
+</a>
+<!-- Project 2: RETRO VISUAL (Top Right) -->
+<a class="col-span-1 md:col-span-5 row-span-1 group relative block bg-surface rounded-[32px] border-2 border-black overflow-hidden shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 hover:-rotate-1 hover:shadow-[8px_8px_0px_0px_rgba(243,231,0,1)] transition-all duration-300" href="#">
+<div class="absolute inset-0 bg-primary-container/10 p-sm">
+<div class="w-full h-full rounded-[24px] overflow-hidden border border-border-accent relative">
+<img class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700" data-alt="A vivid, chaotic digital illustration blending y2k aesthetics with modern pop-art. Features chunky typography, smiley faces, and acid-bright colors (hot pink, lime green, bright yellow) layered like a scrapbook page." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI9htuH2Lmpmbul1gDn89zPMC0Owdpq_YUsxIwqUZ92y5VSXfaFPbh0NIwEkRW6TlPlVHXEWJQFUiMcJkoLWQR55yIkyYDAof-7Dw0qWT0pCllCeJcBw7bKNzkE81gbmJOGhF4WOCQiIO-C0abEYlfDW3SRiXUJ4g8RuDU9ET0kwYbesNgfm_lt1IDuklYxI2gRZIFHiFvq1AOhw8zdBwWcig9mEGu5Vt6ogb2XdbPIs_ibO0eXCjb">
+<div class="absolute top-md right-md">
+<span class="bg-primary text-white font-label-sm text-label-sm px-md py-xs rounded-full border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">Illustration</span>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-md bg-gradient-to-t from-black/80 to-transparent text-white">
+<h3 class="font-headline-md text-[24px] uppercase">RETRO VISUAL</h3>
+</div>
+</a>
+<!-- Project 3: BLACK BROADCAST (Bottom Right) -->
+<a class="col-span-1 md:col-span-5 row-span-1 group relative block bg-surface rounded-[32px] border-2 border-black overflow-hidden shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 hover:rotate-1 hover:shadow-[8px_8px_0px_0px_rgba(155,107,0,1)] transition-all duration-300" href="#">
+<div class="absolute inset-0 bg-tertiary-container/10 p-sm">
+<div class="w-full h-full rounded-[24px] overflow-hidden border border-border-accent relative bg-inverse-surface">
+<img class="w-full h-full object-cover opacity-80 mix-blend-luminosity transform group-hover:scale-105 group-hover:mix-blend-normal transition-all duration-700" data-alt="A bold, brutalist visual identity mock-up for 'BLACK BROADCAST'. Dark mode aesthetic with high-contrast neon orange and stark white typography. The design feels edgy, using heavy grids and distressed textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsfyx390zkbn25EFENtKDbmfqlV14cHh7DTWw1NIAmLl73BCAuTEu2atyQ7MJ3MmLauMjqTY6FYbWzC8n_3Up8Ho_fi03fLlQnwUz0K6wMBhXvUNz5j-ADUcb2qkVA4Y8O_zkZdv-jvoZV0CkoM0JE5eur1Cm8nAi2vlc9AKjkHH-c6MDPs7GF2COnk2TAQcTxruIwu6W2F9NbxWeAnjUTGr8DzC24KY0uMI4i54I80WQpGQsrIrNp">
+<div class="absolute top-md right-md">
+<span class="bg-surface text-black font-label-sm text-label-sm px-md py-xs rounded-full border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">Identity</span>
+</div>
+</div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-md bg-gradient-to-t from-black/80 to-transparent text-white">
+<h3 class="font-headline-md text-[24px] uppercase">BLACK BROADCAST</h3>
+</div>
+</a>
+<!-- Project 4: SOCIAL MEDIA (Wide Bottom) -->
+<a class="col-span-1 md:col-span-12 row-span-1 group relative block bg-tertiary-fixed-dim rounded-[32px] border-2 border-black overflow-hidden shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_rgba(174,0,131,1)] transition-all duration-300 flex items-center justify-between p-xl" href="#">
+<div class="z-10 flex-shrink-0">
+<span class="inline-block bg-white text-black font-label-sm text-label-sm px-md py-xs rounded-full border border-black mb-sm">2026 • Digital Content</span>
+<h3 class="font-headline-md text-headline-md text-black uppercase max-w-md">SOCIAL MEDIA CAMPAIGN</h3>
+<p class="font-body-md text-body-md text-on-tertiary-fixed-variant mt-sm underline decoration-2 underline-offset-4">View Case Study</p>
+</div>
+<!-- Decorative collage element -->
+<div class="absolute right-0 top-0 h-full w-1/2 overflow-hidden pointer-events-none">
+<div 20\"="" class="absolute inset-0 bg-[url('data:image/svg+xml;utf8,%3Csvg width=\" cx="\&quot;2\&quot;" cy="\&quot;2\&quot;" fill="\&quot;%23000\&quot;" fill-opacity="\&quot;0.1\&quot;/%3E%3C/svg%3E')]&quot;" height="\&quot;20\&quot;" r="\&quot;2\&quot;" xmlns="\&quot;http://www.w3.org/2000/svg\&quot;%3E%3Ccircle"></div>
+<div class="sticker bg-primary text-white p-md rounded-full border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transform rotate-12 right-12 top-8">
+<span class="material-symbols-outlined text-4xl">favorite</span>
+</div>
+</div>
+</a>
+</div>
+<div class="mt-lg flex justify-center md:hidden">
+<a class="bg-surface text-on-surface font-label-sm text-label-sm px-xl py-md rounded-full border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:bg-tertiary-fixed-dim transition-all uppercase tracking-wide" href="#">
+                VIEW ALL WORKS
+            </a>
+</div>
+</section>
+<!-- Personality / Statement Section -->
+<section class="py-5xl px-lg bg-surface-variant border-y-4 border-black relative overflow-hidden flex flex-col items-center justify-center text-center min-h-[512px]">
+<!-- Background Decor -->
+<div %3e%3c="" 0="" 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30v0h-2v4h-4v2h4v4h2v6h4v4h-4zm6="" 34v-4h4v4h0v2h4v4h2v-4h4v-2h6zm6="" 4v0h4v4h0v2h4v4h2v6h4v4h6z\"="" 60="" 60\"="" class="absolute inset-0 opacity-20 pointer-events-none bg-[url('data:image/svg+xml;utf8,%3Csvg width=\" d="\&quot;M36" fill="\&quot;%23ae0083\&quot;" fill-opacity="\&quot;1\&quot;%3E%3Cpath" fill-rule="\&quot;evenodd\&quot;%3E%3Cg" g%3e%3c="" height="\&quot;60\&quot;" svg%3e')]"="" viewbox="\&quot;0" xmlns="\&quot;http://www.w3.org/2000/svg\&quot;%3E%3Cg"></div>
+<div class="relative z-10 max-w-4xl mx-auto">
+<h2 class="font-headline-xl-mobile md:font-headline-xl text-headline-xl-mobile md:text-headline-xl text-primary leading-none uppercase tracking-tighter mix-blend-multiply">
+                DESIGN SHOULD<br>FEEL ALIVE.
+            </h2>
+<!-- Stickers scattered around text -->
+<div class="sticker bg-secondary-fixed text-black font-label-sm text-label-sm px-lg py-sm border-2 border-black rounded-full top-0 left-[-10%] transform -rotate-12 hidden md:block">
+                EXPLORE
+            </div>
+<div class="sticker bg-primary text-white font-label-sm text-label-sm px-lg py-sm border-2 border-black rounded-full bottom-[10%] right-[-5%] transform rotate-12 hidden md:block">
+                EXPERIMENT
+            </div>
+<div class="sticker bg-tertiary-fixed-dim text-black font-label-sm text-label-sm px-lg py-sm border-2 border-black rounded-[8px] top-[40%] left-[-15%] transform rotate-6 hidden md:block">
+                PLAY
+            </div>
+<div class="sticker bg-surface text-primary font-label-sm text-label-sm px-lg py-sm border-2 border-black rounded-full bottom-[-20px] left-[30%] transform -rotate-6">
+                CREATE
+            </div>
+</div>
+</section>
+<!-- MY SKILL Section -->
+<section id="skills" class="skills-bg relative overflow-hidden py-3xl md:py-4xl px-md md:px-lg">
+<div class="skills-blob absolute -top-16 -left-16 w-64 h-64 bg-tertiary-fixed-dim rounded-full mix-blend-multiply blur-xl opacity-70"></div>
+<div class="skills-blob absolute top-24 right-8 w-48 h-48 bg-secondary-fixed rounded-full mix-blend-multiply blur-xl opacity-70"></div>
+<div class="skills-blob absolute -bottom-20 -right-16 w-72 h-72 bg-primary-fixed rounded-full mix-blend-multiply blur-xl opacity-70"></div>
+<div class="skills-blob absolute bottom-16 left-8 w-40 h-40 bg-[#71d4ff]/70 rounded-full mix-blend-multiply blur-xl opacity-60"></div>
+<span class="skills-doodle absolute top-10 left-[12%] bg-primary text-white w-12 h-12 rounded-full rotate-[-15deg] text-2xl hidden md:inline-flex" aria-hidden="true" style="--d:0s">
+<span class="material-symbols-outlined">star</span>
+</span>
+<span class="skills-doodle absolute top-28 right-[10%] bg-surface text-primary w-10 h-10 rounded-[10px] rotate-[12deg] text-xl hidden lg:inline-flex" aria-hidden="true" style="--d:0.4s">
+<span class="material-symbols-outlined">bolt</span>
+</span>
+<span class="skills-doodle absolute bottom-28 left-[8%] bg-secondary-fixed text-black w-11 h-11 rounded-full rotate-[10deg] text-xl hidden lg:inline-flex" aria-hidden="true" style="--d:0.8s">
+<span class="material-symbols-outlined">auto_awesome</span>
+</span>
+<span class="skills-doodle absolute bottom-20 right-[12%] bg-[#71d4ff] text-black w-10 h-10 rounded-full rotate-[-8deg] text-xl hidden md:inline-flex" aria-hidden="true" style="--d:1.2s">
+<span class="material-symbols-outlined">palette</span>
+</span>
+<div class="max-w-7xl mx-auto relative z-10">
+<div class="text-center mb-2xl">
+<h3 class="font-headline-lg text-headline-lg text-on-surface inline-block relative">
+                My Skill
+                <div class="absolute -bottom-2 left-0 w-full h-sm bg-secondary-fixed -z-10 rotate-[-2deg]"></div>
+</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto mt-lg">
+                Tools I create with every day — from vector illustration to motion cuts.
+            </p>
+</div>
+<div class="flex flex-wrap justify-center items-stretch gap-xl">
+<div class="skill-card w-[220px] max-w-full bg-surface border-2 border-on-surface rounded-2xl hard-shadow-black p-lg flex flex-col items-center gap-md rotate-[-2deg] hover:scale-105 hover:rotate-0 transition-transform duration-300">
+<div class="skill-pop" id="pop-illustrator" role="tooltip" aria-hidden="true">85%</div>
+<button type="button" class="skill-logo skill-logo-btn w-24 h-24 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]" aria-expanded="false" aria-controls="pop-illustrator" aria-label="Adobe Illustrator, 85 persen">
+<img src="../IMAGE/LOGO%20APLIKASI/skill-illustrator.png" alt="Adobe Illustrator">
+</button>
+<span class="font-label-sm text-label-sm uppercase tracking-wide font-bold text-center">Adobe Illustrator</span>
+<div class="w-full">
+<div class="flex justify-between items-center mb-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Expert</span>
+<span class="bg-secondary-fixed text-black font-headline-md text-headline-md px-sm py-xs rounded-full border-2 border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">85%</span>
+</div>
+<div class="skill-bar" role="img" aria-label="Adobe Illustrator proficiency 85 percent">
+<div class="skill-bar-fill" style="--skill:85%"></div>
+</div>
+</div>
+</div>
+<div class="skill-card w-[220px] max-w-full bg-surface border-2 border-on-surface rounded-2xl hard-shadow-primary p-lg flex flex-col items-center gap-md rotate-[1.5deg] hover:scale-105 hover:rotate-0 transition-transform duration-300">
+<div class="skill-pop" id="pop-photoshop" role="tooltip" aria-hidden="true">75%</div>
+<button type="button" class="skill-logo skill-logo-btn w-24 h-24 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]" aria-expanded="false" aria-controls="pop-photoshop" aria-label="Adobe Photoshop, 75 persen">
+<img src="../IMAGE/LOGO%20APLIKASI/skill-photoshop.png" alt="Adobe Photoshop">
+</button>
+<span class="font-label-sm text-label-sm uppercase tracking-wide font-bold text-center">Adobe Photoshop</span>
+<div class="w-full">
+<div class="flex justify-between items-center mb-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Advanced</span>
+<span class="bg-secondary-fixed text-black font-headline-md text-headline-md px-sm py-xs rounded-full border-2 border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">75%</span>
+</div>
+<div class="skill-bar" role="img" aria-label="Adobe Photoshop proficiency 75 percent">
+<div class="skill-bar-fill" style="--skill:75%"></div>
+</div>
+</div>
+</div>
+<div class="skill-card w-[220px] max-w-full bg-surface border-2 border-on-surface rounded-2xl hard-shadow-black p-lg flex flex-col items-center gap-md rotate-[2deg] hover:scale-105 hover:rotate-0 transition-transform duration-300">
+<div class="skill-pop" id="pop-blender" role="tooltip" aria-hidden="true">30%</div>
+<button type="button" class="skill-logo skill-logo-btn w-24 h-24 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]" aria-expanded="false" aria-controls="pop-blender" aria-label="Blender, 30 persen">
+<img src="../IMAGE/LOGO%20APLIKASI/skill-blender.png" alt="Blender">
+</button>
+<span class="font-label-sm text-label-sm uppercase tracking-wide font-bold text-center">Blender</span>
+<div class="w-full">
+<div class="flex justify-between items-center mb-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Beginner</span>
+<span class="bg-secondary-fixed text-black font-headline-md text-headline-md px-sm py-xs rounded-full border-2 border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">30%</span>
+</div>
+<div class="skill-bar" role="img" aria-label="Blender proficiency 30 percent">
+<div class="skill-bar-fill" style="--skill:30%"></div>
+</div>
+</div>
+</div>
+<div class="skill-card w-[220px] max-w-full bg-surface border-2 border-on-surface rounded-2xl hard-shadow-primary p-lg flex flex-col items-center gap-md rotate-[-1deg] hover:scale-105 hover:rotate-0 transition-transform duration-300">
+<div class="skill-pop" id="pop-canva" role="tooltip" aria-hidden="true">95%</div>
+<button type="button" class="skill-logo skill-logo-btn w-24 h-24 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]" aria-expanded="false" aria-controls="pop-canva" aria-label="Canva, 95 persen">
+<img src="../IMAGE/LOGO%20APLIKASI/skill-canva.png" alt="Canva">
+</button>
+<span class="font-label-sm text-label-sm uppercase tracking-wide font-bold text-center">Canva</span>
+<div class="w-full">
+<div class="flex justify-between items-center mb-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Expert</span>
+<span class="bg-secondary-fixed text-black font-headline-md text-headline-md px-sm py-xs rounded-full border-2 border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">95%</span>
+</div>
+<div class="skill-bar" role="img" aria-label="Canva proficiency 95 percent">
+<div class="skill-bar-fill" style="--skill:95%"></div>
+</div>
+</div>
+</div>
+<div class="skill-card w-[220px] max-w-full bg-surface border-2 border-on-surface rounded-2xl hard-shadow-black p-lg flex flex-col items-center gap-md rotate-[1deg] hover:scale-105 hover:rotate-0 transition-transform duration-300">
+<div class="skill-pop" id="pop-capcut" role="tooltip" aria-hidden="true">90%</div>
+<button type="button" class="skill-logo skill-logo-btn w-24 h-24 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)]" aria-expanded="false" aria-controls="pop-capcut" aria-label="CapCut, 90 persen">
+<img src="../IMAGE/LOGO%20APLIKASI/skill-capcut.png" alt="CapCut">
+</button>
+<span class="font-label-sm text-label-sm uppercase tracking-wide font-bold text-center">CapCut</span>
+<div class="w-full">
+<div class="flex justify-between items-center mb-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Expert</span>
+<span class="bg-secondary-fixed text-black font-headline-md text-headline-md px-sm py-xs rounded-full border-2 border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">90%</span>
+</div>
+<div class="skill-bar" role="img" aria-label="CapCut proficiency 90 percent">
+<div class="skill-bar-fill" style="--skill:90%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Closing CTA Section -->
+<section class="py-5xl px-lg max-w-4xl mx-auto text-center relative z-10">
+<div class="bg-surface p-2xl md:p-4xl rounded-[48px] border-4 border-black shadow-[12px_12px_0px_0px_rgba(216,191,243,1)] relative">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface uppercase mb-lg">
+                HAVE AN IDEA?<br>
+<span class="text-primary">LET'S MAKE IT VISUAL.</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto mb-xl">
+                Currently open for freelance projects and exciting collaborations. Don't be a stranger!
+            </p>
+<button class="bg-primary text-on-primary font-headline-md text-[20px] px-2xl py-md rounded-full border-4 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:bg-secondary-fixed hover:text-black hover:scale-110 hover:-rotate-3 transition-all active:translate-y-2 active:shadow-[0px_0px_0px_0px_rgba(0,0,0,1)] uppercase tracking-wide">
+                CONTACT ME
+            </button>
+<!-- Decorative Doodles -->
+<div class="absolute top-12 left-12 text-secondary-fixed transform -rotate-12 hidden md:block">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+</div>
+<div class="absolute bottom-12 right-12 text-primary transform rotate-12 hidden md:block">
+<span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full mt-2xl bg-secondary-fixed dark:bg-secondary-fixed-dim text-on-secondary-fixed font-body-sm text-body-sm border-t-2 border-on-secondary-fixed flex flex-col md:flex-row justify-between items-center px-lg py-xl gap-md z-20 relative">
+<div class="font-headline-md text-headline-md text-on-secondary-fixed uppercase tracking-tighter font-black">
+            FRISCA
+        </div>
+<div class="text-center md:text-left font-label-sm font-bold opacity-90">
+            © 2024 FRISCA. CREATED WITH LOVE &amp; STICKERS.
+        </div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="opacity-80 hover:opacity-100 hover:text-primary transition-all hover:skew-x-2 underline font-bold uppercase tracking-wide" href="#">Instagram</a>
+<a class="opacity-80 hover:opacity-100 hover:text-primary transition-all hover:skew-x-2 underline font-bold uppercase tracking-wide" href="#">Dribbble</a>
+<a class="opacity-80 hover:opacity-100 hover:text-primary transition-all hover:skew-x-2 underline font-bold uppercase tracking-wide" href="#">LinkedIn</a>
+<a class="opacity-80 hover:opacity-100 hover:text-primary transition-all hover:skew-x-2 underline font-bold uppercase tracking-wide" href="#">Email</a>
+</div>
+</footer>
+<script>
+        // Simple vanilla JS to add random slight rotations to cards on load to enhance the scrapbook feel
+        document.addEventListener("DOMContentLoaded", () => {
+            const stickers = document.querySelectorAll('.sticker');
+            // Ensure stickers float slightly if they aren't being hovered
+            stickers.forEach(sticker => {
+                const randomDelay = Math.random() * 2;
+                sticker.style.animation = `float 3s ease-in-out ${randomDelay}s infinite alternate`;
+            });
+            
+            // Add keyframes for float dynamically
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes float {
+                    0% { margin-top: 0px; }
+                    100% { margin-top: -5px; }
+                }
+            `;
+            document.head.appendChild(style);
+
+            // --- LOGO DESIGN Modal Lightbox with Slider ---
+            const asaSushiModal = document.getElementById("asa-sushi-modal");
+            const logoDesignImg = document.querySelector(".logo-design-img");
+            const modalClose = document.getElementById("modal-close");
+            const logoPrev = document.getElementById("logo-prev");
+            const logoNext = document.getElementById("logo-next");
+            const logoSlides = asaSushiModal ? asaSushiModal.querySelectorAll(".logo-slide") : [];
+            const logoDots = asaSushiModal ? asaSushiModal.querySelectorAll(".modal-dot") : [];
+            let logoCurrent = 0;
+
+            const showLogoSlide = (index) => {
+                if (!logoSlides.length) return;
+                logoCurrent = (index + logoSlides.length) % logoSlides.length;
+                logoSlides.forEach((slide, i) => {
+                    slide.classList.toggle("active", i === logoCurrent);
+                });
+                logoDots.forEach((dot, i) => {
+                    const isActive = i === logoCurrent;
+                    dot.classList.toggle("active", isActive);
+                    dot.setAttribute("aria-selected", isActive ? "true" : "false");
+                });
+            };
+
+            if (asaSushiModal && logoDesignImg && modalClose) {
+                const openModal = () => {
+                    showLogoSlide(0);
+                    asaSushiModal.classList.add("open");
+                    document.body.style.overflow = "hidden";
+                };
+                const closeModal = () => {
+                    asaSushiModal.classList.remove("open");
+                    document.body.style.overflow = "";
+                };
+
+                logoDesignImg.addEventListener("click", (e) => {
+                    e.preventDefault();
+                    openModal();
+                });
+                modalClose.addEventListener("click", closeModal);
+                asaSushiModal.addEventListener("click", (e) => {
+                    if (e.target === asaSushiModal) closeModal();
+                });
+                if (logoPrev) logoPrev.addEventListener("click", (e) => { e.stopPropagation(); showLogoSlide(logoCurrent - 1); });
+                if (logoNext) logoNext.addEventListener("click", (e) => { e.stopPropagation(); showLogoSlide(logoCurrent + 1); });
+                logoDots.forEach((dot, i) => {
+                    dot.addEventListener("click", (e) => { e.stopPropagation(); showLogoSlide(i); });
+                });
+
+                document.addEventListener("keydown", (e) => {
+                    if (!asaSushiModal.classList.contains("open")) return;
+                    if (e.key === "Escape") closeModal();
+                    if (e.key === "ArrowLeft") showLogoSlide(logoCurrent - 1);
+                    if (e.key === "ArrowRight") showLogoSlide(logoCurrent + 1);
+                });
+
+                let touchStartX = 0;
+                let touchEndX = 0;
+                asaSushiModal.addEventListener("touchstart", (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+                asaSushiModal.addEventListener("touchend", (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    const diff = touchEndX - touchStartX;
+                    if (Math.abs(diff) > 50) {
+                        if (diff < 0) showLogoSlide(logoCurrent + 1);
+                        else showLogoSlide(logoCurrent - 1);
+                    }
+                }, { passive: true });
+            }
+
+            // --- MY SKILL: popup persentase ---
+            const skillPopButtons = document.querySelectorAll(".skill-logo-btn");
+            const closeSkillPops = (exceptBtn) => {
+                skillPopButtons.forEach((btn) => {
+                    if (btn === exceptBtn) return;
+                    const pop = document.getElementById(btn.getAttribute("aria-controls"));
+                    btn.setAttribute("aria-expanded", "false");
+                    if (pop) {
+                        pop.classList.remove("is-open");
+                        pop.setAttribute("aria-hidden", "true");
+                    }
+                });
+            };
+            skillPopButtons.forEach((btn) => {
+                const pop = document.getElementById(btn.getAttribute("aria-controls"));
+                if (!pop) return;
+                btn.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    const willOpen = btn.getAttribute("aria-expanded") !== "true";
+                    closeSkillPops(willOpen ? btn : null);
+                    btn.setAttribute("aria-expanded", willOpen ? "true" : "false");
+                    pop.classList.toggle("is-open", willOpen);
+                    pop.setAttribute("aria-hidden", willOpen ? "false" : "true");
+                });
+            });
+            if (skillPopButtons.length) {
+                document.addEventListener("click", () => closeSkillPops(null));
+                document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeSkillPops(null); });
+            }
+        });
+    </script>
+
+<!-- LOGO DESIGN Modal - Slider -->
+<div id="asa-sushi-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="LOGO DESIGN gallery">
+    <div class="modal-content digital-modal-slider">
+        <button id="modal-close" class="modal-close" aria-label="Close modal">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">close</span>
+        </button>
+        <button id="logo-prev" class="modal-nav modal-prev" aria-label="Previous image">
+            <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <button id="logo-next" class="modal-nav modal-next" aria-label="Next image">
+            <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+        <div class="logo-slide active">
+            <img class="modal-image" src="../IMAGE/ASA SUSHI LOGO-01.jpg" alt="LOGO DESIGN - ASA SUSHI Logo">
+        </div>
+        <div class="logo-slide">
+            <img class="modal-image" src="../IMAGE/LOGO/LOGO METHOD_final.jpg" alt="LOGO DESIGN - Logo Method">
+        </div>
+        <div class="logo-slide">
+            <img class="modal-image" src="../IMAGE/LOGO/Print.jpg" alt="LOGO DESIGN - Print Version">
+        </div>
+        <div class="modal-dots" role="tablist" aria-label="Image navigation">
+            <button class="modal-dot active" data-slide="0" aria-label="Go to image 1" role="tab" aria-selected="true"></button>
+            <button class="modal-dot" data-slide="1" aria-label="Go to image 2" role="tab" aria-selected="false"></button>
+            <button class="modal-dot" data-slide="2" aria-label="Go to image 3" role="tab" aria-selected="false"></button>
+        </div>
+    </div>
+</div>
+</body></html>

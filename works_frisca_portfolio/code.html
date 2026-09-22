@@ -1,0 +1,1182 @@
+﻿<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Works - FRISCA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "tertiary-fixed-dim": "#ffba38",
+                "on-tertiary-fixed-variant": "#604100",
+                "inverse-on-surface": "#ffecf3",
+                "on-tertiary": "#ffffff",
+                "on-secondary-fixed": "#1e1c00",
+                "on-primary-container": "#fffbff",
+                "surface": "#FFFFFF",
+                "on-primary": "#ffffff",
+                "primary-fixed": "#ffd8ea",
+                "outline-variant": "#dfbdcd",
+                "surface-container-high": "#fce1ed",
+                "error": "#E53935",
+                "inverse-primary": "#ffaeda",
+                "on-surface": "#26171f",
+                "background": "#F7F4EF",
+                "on-error-container": "#93000a",
+                "inverse-surface": "#3c2c34",
+                "secondary-fixed": "#f3e700",
+                "primary": "#ae0083",
+                "surface-tint": "#b30086",
+                "success": "#20B26B",
+                "surface-container-low": "#fff0f5",
+                "text-main": "#1A1A1A",
+                "on-error": "#ffffff",
+                "on-surface-variant": "#58404c",
+                "on-tertiary-fixed": "#281900",
+                "border-accent": "#D8BFF3",
+                "on-tertiary-container": "#fffbff",
+                "surface-dim": "#eed3de",
+                "on-primary-fixed": "#3c002b",
+                "secondary": "#666000",
+                "surface-container": "#ffe8f1",
+                "on-background": "#26171f",
+                "tertiary-container": "#9b6b00",
+                "surface-bright": "#fff8f8",
+                "tertiary-fixed": "#ffdeac",
+                "on-secondary-fixed-variant": "#4d4800",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary": "#ffffff",
+                "primary-fixed-dim": "#ffaeda",
+                "on-secondary-container": "#6a6500",
+                "tertiary": "#7b5500",
+                "error-container": "#ffdad6",
+                "primary-container": "#da00a4",
+                "outline": "#8b6f7d",
+                "on-primary-fixed-variant": "#890066",
+                "surface-variant": "#f6dbe7",
+                "surface-container-highest": "#f6dbe7",
+                "secondary-container": "#f0e400",
+                "secondary-fixed-dim": "#d5ca00",
+                "text-muted": "#666666"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "2xl": "48px",
+                "sm": "8px",
+                "lg": "24px",
+                "5xl": "120px",
+                "xl": "32px",
+                "4xl": "96px",
+                "3xl": "64px",
+                "xs": "4px",
+                "md": "16px"
+        },
+        "fontFamily": {
+                "label-sm": [
+                        "Be Vietnam Pro"
+                ],
+                "headline-lg": [
+                        "Syne"
+                ],
+                "headline-md": [
+                        "Syne"
+                ],
+                "headline-xl-mobile": [
+                        "Syne"
+                ],
+                "headline-xl": [
+                        "Syne"
+                ],
+                "body-md": [
+                        "Be Vietnam Pro"
+                ],
+                "body-sm": [
+                        "Be Vietnam Pro"
+                ]
+        },
+        "fontSize": {
+                "label-sm": [
+                        "12px",
+                        {
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-xl-mobile": [
+                        "48px",
+                        {
+                                "lineHeight": "1.1",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-xl": [
+                        "96px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-sm": [
+                        "14px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+    /* Custom CSS for additional styling if needed, though Tailwind covers most */
+    .masonry-grid {
+        column-count: 1;
+        column-gap: 24px;
+    }
+    @media (min-width: 768px) {
+        .masonry-grid {
+            column-count: 2;
+        }
+    }
+    @media (min-width: 1024px) {
+        .masonry-grid {
+            column-count: 3;
+        }
+    }
+    .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 24px;
+    }
+    
+    /* Subtle background pattern */
+    body {
+        background-color: #F7F4EF;
+        background-image: radial-gradient(#dfbdcd 1px, transparent 1px);
+        background-size: 20px 20px;
+    }
+
+    /* Modal Lightbox */
+    .modal-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 100;
+        background: rgba(0, 0, 0, 0.85);
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .modal-overlay.open {
+        opacity: 1;
+        visibility: visible;
+    }
+    .modal-content {
+        position: relative;
+        max-width: 90vw;
+        max-height: 90vh;
+        transform: scale(0.9);
+        transition: transform 0.3s ease;
+    }
+    .modal-overlay.open .modal-content {
+        transform: scale(1);
+    }
+    .modal-image {
+        display: block;
+        max-width: 100%;
+        max-height: 90vh;
+        object-fit: contain;
+        border-radius: 12px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .modal-close {
+        position: absolute;
+        top: -50px;
+        right: 0;
+        width: 44px;
+        height: 44px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        color: white;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .modal-close:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.5);
+        transform: rotate(90deg);
+    }
+    .modal-close:focus {
+        outline: 2px solid #f3e700;
+        outline-offset: 2px;
+    }
+.logo-design-img {
+    cursor: zoom-in;
+    transition: opacity 0.2s;
+}
+.logo-design-img:hover {
+    opacity: 0.9;
+}
+    .digital-illustration-img {
+        cursor: zoom-in;
+        transition: opacity 0.2s;
+    }
+    .digital-illustration-img:hover {
+        opacity: 0.9;
+    }
+    /* Digital Illustration Slider inside Modal - centered */
+    .digital-modal-slider {
+        width: 90vw;
+        max-width: 900px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .digital-slide {
+        display: none;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .digital-slide.active {
+        display: flex;
+    }
+    .digital-slide .modal-image {
+        margin: 0 auto;
+        object-position: center center;
+    }
+    .works-popup-img, .works-popup-trigger {
+        cursor: zoom-in;
+        transition: opacity 0.2s;
+    }
+    .works-popup-img:hover, .works-popup-trigger:hover {
+        opacity: 0.9;
+    }
+    .poster-series-img {
+        cursor: zoom-in;
+        transition: opacity 0.2s;
+    }
+    .poster-series-img:hover {
+        opacity: 0.9;
+    }
+    .poster-slide {
+        display: none;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .poster-slide.active {
+        display: flex;
+    }
+    .poster-slide .modal-image {
+        margin: 0 auto;
+        object-position: center center;
+    }
+    .modal-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 48px;
+        height: 48px;
+        background: rgba(255, 255, 255, 0.15);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s, border-color 0.2s;
+        z-index: 2;
+    }
+    .modal-nav:hover {
+        background: rgba(255, 255, 255, 0.25);
+        border-color: rgba(255, 255, 255, 0.6);
+    }
+    .modal-prev { left: -60px; }
+    .modal-next { right: -60px; }
+    .modal-dots {
+        display: flex;
+        gap: 10px;
+        margin-top: 16px;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.4);
+        border: 1px solid rgba(255,255,255,0.6);
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.2s, transform 0.2s;
+    }
+    .modal-dot.active {
+        background: #f3e700;
+        border-color: #f3e700;
+        transform: scale(1.3);
+    }
+    @media (max-width: 768px) {
+        .modal-prev { left: 10px; }
+        .modal-next { right: 10px; }
+    }
+    /* MODUL card + slider modal (4 PDF berurut) */
+    .modul-img {
+        cursor: zoom-in;
+        transition: opacity 0.2s;
+    }
+    .modul-img:hover {
+        opacity: 0.9;
+    }
+    .modul-slide {
+        display: none;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+    .modul-slide.active {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .modul-slide .modal-image {
+        margin: 0 auto;
+        object-position: center center;
+        width: min(80vw, 900px);
+        max-width: 900px;
+        max-height: 70vh;
+        object-fit: contain;
+        background: #fff;
+        border-radius: 12px;
+    }
+    .modul-pdf-frame {
+        width: min(80vw, 900px);
+        height: 60vh;
+        border: 2px solid #fff;
+    }
+    .modul-caption {
+        font-family: "Be Vietnam Pro", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        background: #f3e700;
+        color: #26171f;
+        border: 2px solid #26171f;
+        border-radius: 9999px;
+        padding: 6px 14px;
+        box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+        line-height: 1;
+    }
+</style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Component -->
+<nav class="bg-surface/80 dark:bg-surface-container/80 backdrop-blur-md sticky top-0 w-full z-50 border-b-2 border-primary shadow-[4px_4px_0px_0px_rgba(174,0,131,1)]">
+<div class="flex justify-between items-center px-lg py-md max-w-7xl mx-auto">
+<a class="font-headline-md text-headline-md font-black text-primary uppercase tracking-tighter hover:scale-105 hover:rotate-1 transition-transform duration-200 active:translate-y-1 active:shadow-none" href="#">FRISCA</a>
+<div class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="#">Home</a>
+<a class="text-on-surface hover:text-primary transition-colors font-label-sm text-label-sm uppercase" href="#">About</a>
+<a class="text-primary font-bold border-b-2 border-secondary font-label-sm text-label-sm uppercase" href="#">Works</a>
+</div>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-full font-label-sm text-label-sm uppercase hover:bg-secondary-fixed hover:text-on-secondary-fixed shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-200">Let's Talk</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-lg py-3xl flex flex-col gap-2xl">
+<!-- Header Section -->
+<header class="flex flex-col gap-md text-center max-w-3xl mx-auto items-center relative">
+<div class="absolute -top-10 -left-10 w-24 h-24 bg-tertiary-fixed-dim rounded-full mix-blend-multiply blur-xl opacity-70"></div>
+<div class="absolute -bottom-10 -right-10 w-32 h-32 bg-primary-fixed rounded-full mix-blend-multiply blur-xl opacity-70"></div>
+<h1 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-primary drop-shadow-[4px_4px_0px_rgba(30,28,0,1)] z-10 relative inline-block">
+                SELECTED WORKS
+                <span class="absolute -top-4 -right-8 bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-2 py-1 rounded-full border border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rotate-12">WOW!</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl mx-auto border-2 border-border-accent p-md rounded-lg bg-surface relative z-10 shadow-[4px_4px_0px_0px_rgba(216,191,243,1)]">
+                A collection of design, illustration, branding, packaging, and visual storytelling projects.
+            </p>
+</header>
+<!-- Filters Section -->
+<section class="flex flex-wrap justify-center gap-sm md:gap-md relative z-10">
+<button class="bg-secondary-fixed text-on-secondary-fixed border-2 border-on-surface font-label-sm text-label-sm px-md py-sm rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-primary hover:text-on-primary hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-200 -rotate-2">ALL</button>
+<button class="bg-surface text-on-surface border-2 border-on-surface font-label-sm text-label-sm px-md py-sm rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-secondary-fixed hover:text-on-secondary-fixed hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-200 rotate-1">BRANDING</button>
+<button class="bg-surface text-on-surface border-2 border-on-surface font-label-sm text-label-sm px-md py-sm rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-secondary-fixed hover:text-on-secondary-fixed hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-200 -rotate-1">ILLUSTRATION</button>
+<button class="bg-surface text-on-surface border-2 border-on-surface font-label-sm text-label-sm px-md py-sm rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-secondary-fixed hover:text-on-secondary-fixed hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-200 rotate-2">PACKAGING</button>
+<button class="bg-surface text-on-surface border-2 border-on-surface font-label-sm text-label-sm px-md py-sm rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-secondary-fixed hover:text-on-secondary-fixed hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-200 -rotate-3">SOCIAL MEDIA</button>
+<button class="bg-surface text-on-surface border-2 border-on-surface font-label-sm text-label-sm px-md py-sm rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-secondary-fixed hover:text-on-secondary-fixed hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-200 rotate-1">VIDEO</button>
+<button class="bg-surface text-on-surface border-2 border-on-surface font-label-sm text-label-sm px-md py-sm rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-secondary-fixed hover:text-on-secondary-fixed hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-200 -rotate-1">PHOTOGRAPHY</button>
+<button class="bg-surface text-on-surface border-2 border-on-surface font-label-sm text-label-sm px-md py-sm rounded-full shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:bg-secondary-fixed hover:text-on-secondary-fixed hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 transition-all duration-200 rotate-1">MODUL</button>
+</section>
+<!-- Portfolio Grid -->
+<section class="masonry-grid w-full">
+<!-- Project Card 1: LOGO DESIGN -->
+<article class="masonry-item group relative bg-surface border-2 border-on-surface rounded-lg overflow-hidden shadow-[8px_8px_0px_0px_rgba(174,0,131,1)] hover:shadow-[12px_12px_0px_0px_rgba(243,231,0,1)] transition-all duration-300 hover:scale-[1.02] hover:-rotate-1">
+<div class="relative h-64 md:h-80 w-full border-b-2 border-on-surface overflow-hidden bg-surface-variant">
+<img class="logo-design-img w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="LOGO DESIGN visual identity portfolio - logo" src="../IMAGE/ASA SUSHI LOGO-01.jpg" alt="LOGO DESIGN visual identity portfolio">
+<div class="absolute top-md right-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-sm py-xs rounded-full border border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rotate-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">YUM!</div>
+</div>
+<div class="p-md flex flex-col gap-sm bg-surface">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">LOGO DESIGN</h2>
+<span class="bg-tertiary-fixed-dim text-on-tertiary-fixed-variant font-label-sm text-label-sm px-2 py-1 rounded-full border border-on-surface">2023</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase border-b border-primary w-fit pb-1">Branding &amp; Packaging</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-sm">Creating distinctive visual identities through simple forms, thoughtful concepts, and meaningful details.</p>
+</div>
+</article>
+<!-- Project Card 2: DIGITAL ILUSTRATION -->
+<article class="masonry-item group relative bg-surface border-2 border-on-surface rounded-lg overflow-hidden shadow-[8px_8px_0px_0px_rgba(174,0,131,1)] hover:shadow-[12px_12px_0px_0px_rgba(243,231,0,1)] transition-all duration-300 hover:scale-[1.02] hover:rotate-1">
+<div class="relative h-56 md:h-72 w-full border-b-2 border-on-surface overflow-hidden bg-tertiary-fixed">
+<img class="digital-illustration-img w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" data-alt="DIGITAL ILUSTRATION - A collection of digital artworks exploring creativity, imagination, and visual expression." src="../IMAGE/2.png" alt="DIGITAL ILUSTRATION digital artworks collection">
+<div class="absolute top-md right-md bg-primary text-on-primary font-label-sm text-label-sm px-sm py-xs rounded-full border border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] -rotate-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">CLICK!</div>
+</div>
+<div class="p-md flex flex-col gap-sm bg-surface">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">DIGITAL ILUSTRATION</h2>
+<span class="bg-tertiary-fixed-dim text-on-tertiary-fixed-variant font-label-sm text-label-sm px-2 py-1 rounded-full border border-on-surface">2023</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase border-b border-primary w-fit pb-1">Social Media</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-sm">A collection of digital artworks exploring creativity, imagination, and visual expression.</p>
+</div>
+</article>
+<!-- Project Card 3: BLACK BROADCAST -->
+<article class="masonry-item group relative bg-surface border-2 border-on-surface rounded-lg overflow-hidden shadow-[8px_8px_0px_0px_rgba(174,0,131,1)] hover:shadow-[12px_12px_0px_0px_rgba(243,231,0,1)] transition-all duration-300 hover:scale-[1.02] hover:-rotate-2">
+<div class="relative h-72 md:h-96 w-full border-b-2 border-on-surface overflow-hidden bg-inverse-surface">
+<img class="works-popup-img w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" data-alt="Dynamic visual identity for a student broadcasting organization. The composition features heavy, brutalist typography layered over high-contrast black and white photography of broadcasting equipment like microphones and headphones. Vivid accents of neon pink and bright yellow slice through the monochromatic base, creating a raw, energetic, and rebellious collegiate aesthetic in a bright, modern setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7WmTYqTvTgZ-mHf8JzlXpbFwafYtR-_nlgGROKdMuR02M-cjA3uIusxrrL3P1JqiU18vK7tL2QiF6-51twlhsIioaszhXK2BtEytSAUL1AVnLQyrHFD3GKt-yaZkxs2XSgfahOMwIE2DYXuj-Dd7O-HmpIk2ZpGlk1mN1z3zSRrYRQsICmLL__BiIxriIeNkgOMdd35QZckjO0ksZTQVzHCA22Ai5U602UKGy_1zd7Fbho8AJ2TlE">
+<div class="absolute top-md right-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-sm py-xs rounded-full border border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rotate-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300">LIVE!</div>
+</div>
+<div class="p-md flex flex-col gap-sm bg-surface">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">BLACK BROADCAST</h2>
+<span class="bg-tertiary-fixed-dim text-on-tertiary-fixed-variant font-label-sm text-label-sm px-2 py-1 rounded-full border border-on-surface">2022</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase border-b border-primary w-fit pb-1">Video &amp; Visual Content</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-sm">Creative visual content for a student broadcasting organization.</p>
+</div>
+</article>
+<!-- Project Card 4: RETRO ILLUSTRATION -->
+<article class="masonry-item group relative bg-surface border-2 border-on-surface rounded-lg overflow-hidden shadow-[8px_8px_0px_0px_rgba(174,0,131,1)] hover:shadow-[12px_12px_0px_0px_rgba(243,231,0,1)] transition-all duration-300 hover:scale-[1.02] hover:rotate-2">
+<div class="relative h-64 md:h-80 w-full border-b-2 border-on-surface overflow-hidden bg-primary-fixed">
+<img class="works-popup-img w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" data-alt="A vibrant, digitally painted character illustration heavily inspired by Y2K aesthetics and retro-pop culture. The character is styled with chunky platform shoes, oversized accessories, and bright, clashing colors. The background is a chaotic but deliberate collage of starbursts, smiley faces, and checkerboard patterns in bubblegum pink, cyber yellow, and lavender. The mood is highly optimistic and nostalgic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAo4SQI4m1QY2KneZspS94ARNgX_PBva_8tzIUZPy1yYPqRpA14KmQ81VVbXR1dDQfSKJlbiEWsQkeVisouS0jB8oCEz4o388ejEEqDWg4zCzjqRjdrswmDoPXLYn9gyE3h5wr-wIbjt7VhpxPOSmI2i0M1U-NCz_TYQsffO_1mjiHNAJkTRZyMC7LyBsmAAcOUfHZPi7SULEPu22YBVxoAwVnFu9VfhL4C1dHQSi6JvFeGLgdeBd-B">
+<div class="absolute top-md right-md bg-primary text-on-primary font-label-sm text-label-sm px-sm py-xs rounded-full border border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] -rotate-12 opacity-0 group-hover:opacity-100 transition-opacity duration-300">COOL!</div>
+</div>
+<div class="p-md flex flex-col gap-sm bg-surface">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">RETRO ILLUSTRATION</h2>
+<span class="bg-tertiary-fixed-dim text-on-tertiary-fixed-variant font-label-sm text-label-sm px-2 py-1 rounded-full border border-on-surface">2023</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase border-b border-primary w-fit pb-1">Illustration</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-sm">Personal illustration project exploring Y2K colors, characters, and nostalgic visual language.</p>
+</div>
+</article>
+<!-- Project Card 5: PACKAGING PROJECT -->
+<article class="masonry-item group relative bg-surface border-2 border-on-surface rounded-lg overflow-hidden shadow-[8px_8px_0px_0px_rgba(174,0,131,1)] hover:shadow-[12px_12px_0px_0px_rgba(243,231,0,1)] transition-all duration-300 hover:scale-[1.02] hover:-rotate-1">
+<div class="relative h-56 md:h-72 w-full border-b-2 border-on-surface overflow-hidden bg-surface-container-high">
+<img class="works-popup-img w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" data-alt="Experimental and playful packaging design prototype for a fictional snack brand. The packaging features irregular, organic die-cuts and bright, color-blocked sections in pastel pinks and vibrant yellows. The physical prototype is photographed on a clean white surface with sharp, defined drop shadows that emphasize its three-dimensional form. The lighting is crisp studio lighting, highlighting a tactile, paper-like texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtKNFGcoRg00JmvvAsIF4muMdoktDL5XOD4Ao6i9_eMPRqBo9uoBZnbBqtXkV_VXC-yjmvNPPAoReiNXU6R-Xzawk9Fq7rFLCKjxwtG3ZrCM42-l76xGcCtu3ObEV0Rxi0xClL0KCY3gtiNtaxaiZwCNUK1QPByNC-BtBkxKjpV9j1ZaQ_O6leavo782dHHYwvhht8C2NQ4yeOW8YPEntafVr3VCqDGkO5NantgPmThdKWfzjL8OJQ">
+<div class="absolute top-md right-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-sm py-xs rounded-full border border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rotate-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">NEW!</div>
+</div>
+<div class="p-md flex flex-col gap-sm bg-surface">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">PACKAGING PROJECT</h2>
+<span class="bg-tertiary-fixed-dim text-on-tertiary-fixed-variant font-label-sm text-label-sm px-2 py-1 rounded-full border border-on-surface">2022</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase border-b border-primary w-fit pb-1">Packaging</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-sm">Experimental packaging design created as part of DKV coursework.</p>
+</div>
+</article>
+<!-- Project Card 6: PERSONAL POSTER SERIES -->
+<article class="masonry-item group relative bg-surface border-2 border-on-surface rounded-lg overflow-hidden shadow-[8px_8px_0px_0px_rgba(174,0,131,1)] hover:shadow-[12px_12px_0px_0px_rgba(243,231,0,1)] transition-all duration-300 hover:scale-[1.02] hover:rotate-1">
+<div class="relative h-80 md:h-[400px] w-full border-b-2 border-on-surface overflow-hidden bg-surface-dim">
+<img class="poster-series-img w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500" data-alt="Poster Series - Olattte product photo" src="../IMAGE/POSTER SERIES/POSTER FOTO PRODUK_OLATTE.jpg" alt="Poster Series - Olattte">
+<div class="absolute top-md right-md bg-primary text-on-primary font-label-sm text-label-sm px-sm py-xs rounded-full border border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] -rotate-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">CLICK!</div>
+</div>
+<div class="p-md flex flex-col gap-sm bg-surface">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">PERSONAL POSTER SERIES</h2>
+<span class="bg-tertiary-fixed-dim text-on-tertiary-fixed-variant font-label-sm text-label-sm px-2 py-1 rounded-full border border-on-surface">2025 - 2026</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase border-b border-primary w-fit pb-1">Design &amp; Collage</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-sm">Poster experiments combining typography, illustration, and collage.</p>
+</div>
+</article>
+<!-- Project Card 7: MODUL - 1 kartu, 4 PDF slider modal -->
+<article class="masonry-item group relative bg-surface border-2 border-on-surface rounded-lg overflow-hidden shadow-[8px_8px_0px_0px_rgba(174,0,131,1)] hover:shadow-[12px_12px_0px_0px_rgba(243,231,0,1)] transition-all duration-300 hover:scale-[1.02] hover:rotate-1">
+<div class="relative h-64 md:h-80 w-full border-b-2 border-on-surface overflow-hidden bg-secondary-fixed">
+<img class="modul-img w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="MODUL - Modul pembelajaran desain visual" src="../IMAGE/MODUL/COVER%20MODUL.png">
+<div class="absolute top-md right-md bg-primary text-on-primary font-label-sm text-label-sm px-sm py-xs rounded-full border border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] -rotate-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">3 PDF</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-black/50">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-sm py-xs rounded-full border border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] -rotate-6">VIEW</span>
+</div>
+</div>
+<div class="p-md flex flex-col gap-sm bg-surface">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">MODUL</h2>
+<span class="bg-tertiary-fixed-dim text-on-tertiary-fixed-variant font-label-sm text-label-sm px-2 py-1 rounded-full border border-on-surface">2026</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase border-b border-primary w-fit pb-1">Branding &amp; Education</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-sm">Kumpulan 3 modul pembelajaran desain visual untuk mahasiswa DKV.</p>
+</div>
+</article>
+<!-- Project Card 8: CHARACTER 2D & 3D - 1 kartu, 5 gambar slider modal -->
+<article class="masonry-item group relative bg-surface border-2 border-on-surface rounded-lg overflow-hidden shadow-[8px_8px_0px_0px_rgba(174,0,131,1)] hover:shadow-[12px_12px_0px_0px_rgba(243,231,0,1)] transition-all duration-300 hover:scale-[1.02] hover:-rotate-2">
+<div class="relative h-64 md:h-80 w-full border-b-2 border-on-surface overflow-hidden bg-tertiary-fixed">
+<img class="character-img w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="CHARACTER 2D & 3D - character design collection" src="../IMAGE/Karakter%202D%20%26%203D/karakter%20.png">
+<div class="absolute top-md right-md bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-sm py-xs rounded-full border border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] rotate-3">5 PHOTOS</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none bg-black/50">
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-sm py-xs rounded-full border border-on-surface shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] -rotate-6">VIEW</span>
+</div>
+</div>
+<div class="p-md flex flex-col gap-sm bg-surface">
+<div class="flex justify-between items-start">
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase tracking-tight">CHARACTER 2D &amp; 3D</h2>
+<span class="bg-tertiary-fixed-dim text-on-tertiary-fixed-variant font-label-sm text-label-sm px-2 py-1 rounded-full border border-on-surface">2026</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase border-b border-primary w-fit pb-1">Illustration &amp; 3D</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-sm">Original character designs in 2D and 3D, from playful mascots to low-poly figures.</p>
+</div>
+</article>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-secondary-fixed dark:bg-secondary-fixed-dim w-full mt-2xl border-t-2 border-on-secondary-fixed flat no shadows">
+<div class="flex flex-col md:flex-row justify-between items-center px-lg py-xl gap-md w-full max-w-7xl mx-auto">
+<div class="font-headline-md text-headline-md text-on-secondary-fixed">FRISCA</div>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="font-body-sm text-body-sm text-on-secondary-fixed opacity-80 hover:opacity-100 hover:text-primary hover:skew-x-2 transition-all" href="#">Instagram</a>
+<a class="font-body-sm text-body-sm text-on-secondary-fixed opacity-80 hover:opacity-100 hover:text-primary hover:skew-x-2 transition-all" href="#">Dribbble</a>
+<a class="font-body-sm text-body-sm text-on-secondary-fixed opacity-80 hover:opacity-100 hover:text-primary hover:skew-x-2 transition-all" href="#">LinkedIn</a>
+<a class="font-body-sm text-body-sm text-on-secondary-fixed opacity-80 hover:opacity-100 hover:text-primary hover:skew-x-2 transition-all" href="#">Email</a>
+</div>
+<div class="font-body-sm text-body-sm text-on-secondary-fixed opacity-80 text-center md:text-right">
+                Â© 2024 FRISCA. CREATED WITH LOVE &amp; STICKERS.
+            </div>
+</div>
+</footer>
+<script>
+    // --- LOGO DESIGN Modal Lightbox with Slider ---
+    const asaSushiModal = document.getElementById("asa-sushi-modal");
+    const logoDesignImg = document.querySelector(".logo-design-img");
+    const modalClose = document.getElementById("modal-close");
+    const logoPrev = document.getElementById("logo-prev");
+    const logoNext = document.getElementById("logo-next");
+    const logoSlides = asaSushiModal ? asaSushiModal.querySelectorAll(".logo-slide") : [];
+    const logoDots = asaSushiModal ? asaSushiModal.querySelectorAll(".modal-dot") : [];
+    let logoCurrent = 0;
+
+    const showLogoSlide = (index) => {
+        if (!logoSlides.length) return;
+        logoCurrent = (index + logoSlides.length) % logoSlides.length;
+        logoSlides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === logoCurrent);
+        });
+        logoDots.forEach((dot, i) => {
+            const isActive = i === logoCurrent;
+            dot.classList.toggle("active", isActive);
+            dot.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+    };
+
+    if (asaSushiModal && logoDesignImg && modalClose) {
+        const openModal = () => {
+            showLogoSlide(0);
+            asaSushiModal.classList.add("open");
+            document.body.style.overflow = "hidden";
+        };
+        const closeModal = () => {
+            asaSushiModal.classList.remove("open");
+            const isDigitalOpen = document.getElementById("digital-illustration-modal")?.classList.contains("open");
+            const isPosterOpen = document.getElementById("poster-series-modal")?.classList.contains("open");
+            const isWorksOpen = document.getElementById("works-lightbox-modal")?.classList.contains("open");
+            const isModulOpen = document.getElementById("modul-modal")?.classList.contains("open");
+            const isCharacterOpen = document.getElementById("character-modal")?.classList.contains("open");
+            if (!isDigitalOpen && !isPosterOpen && !isWorksOpen && !isModulOpen && !isCharacterOpen) {
+                document.body.style.overflow = "";
+            }
+        };
+
+        logoDesignImg.addEventListener("click", openModal);
+        modalClose.addEventListener("click", closeModal);
+        asaSushiModal.addEventListener("click", (e) => {
+            if (e.target === asaSushiModal) closeModal();
+        });
+        if (logoPrev) logoPrev.addEventListener("click", (e) => { e.stopPropagation(); showLogoSlide(logoCurrent - 1); });
+        if (logoNext) logoNext.addEventListener("click", (e) => { e.stopPropagation(); showLogoSlide(logoCurrent + 1); });
+        logoDots.forEach((dot, i) => {
+            dot.addEventListener("click", (e) => { e.stopPropagation(); showLogoSlide(i); });
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (!asaSushiModal.classList.contains("open")) return;
+            if (e.key === "Escape") closeModal();
+            if (e.key === "ArrowLeft") showLogoSlide(logoCurrent - 1);
+            if (e.key === "ArrowRight") showLogoSlide(logoCurrent + 1);
+        });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+        asaSushiModal.addEventListener("touchstart", (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+        asaSushiModal.addEventListener("touchend", (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchEndX - touchStartX;
+            if (Math.abs(diff) > 50) {
+                if (diff < 0) showLogoSlide(logoCurrent + 1);
+                else showLogoSlide(logoCurrent - 1);
+            }
+        }, { passive: true });
+    }
+
+    // --- DIGITAL ILLUSTRATION Modal Lightbox with Slider (hanya gambar) ---
+    const digitalModal = document.getElementById("digital-illustration-modal");
+    const digitalImg = document.querySelector(".digital-illustration-img");
+    const digitalClose = document.getElementById("digital-modal-close");
+    const digitalPrev = document.getElementById("digital-prev");
+    const digitalNext = document.getElementById("digital-next");
+    const digitalSlides = digitalModal ? digitalModal.querySelectorAll(".digital-slide") : [];
+    const digitalDots = digitalModal ? digitalModal.querySelectorAll(".modal-dot") : [];
+    let digitalCurrent = 0;
+
+    const showDigitalSlide = (index) => {
+        if (!digitalSlides.length) return;
+        digitalCurrent = (index + digitalSlides.length) % digitalSlides.length;
+        digitalSlides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === digitalCurrent);
+        });
+        digitalDots.forEach((dot, i) => {
+            const isActive = i === digitalCurrent;
+            dot.classList.toggle("active", isActive);
+            dot.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+    };
+
+    if (digitalModal && digitalImg && digitalClose) {
+        const openDigitalModal = () => {
+            showDigitalSlide(0);
+            digitalModal.classList.add("open");
+            document.body.style.overflow = "hidden";
+        };
+        const closeDigitalModal = () => {
+            digitalModal.classList.remove("open");
+            const isAsaOpen = document.getElementById("asa-sushi-modal")?.classList.contains("open");
+            const isPosterOpen = document.getElementById("poster-series-modal")?.classList.contains("open");
+            const isWorksOpen = document.getElementById("works-lightbox-modal")?.classList.contains("open");
+            const isModulOpen = document.getElementById("modul-modal")?.classList.contains("open");
+            const isCharacterOpen = document.getElementById("character-modal")?.classList.contains("open");
+            if (!isAsaOpen && !isPosterOpen && !isWorksOpen && !isModulOpen && !isCharacterOpen) {
+                document.body.style.overflow = "";
+            }
+        };
+
+        digitalImg.addEventListener("click", openDigitalModal);
+        digitalClose.addEventListener("click", closeDigitalModal);
+        digitalModal.addEventListener("click", (e) => {
+            if (e.target === digitalModal) closeDigitalModal();
+        });
+        if (digitalPrev) digitalPrev.addEventListener("click", (e) => { e.stopPropagation(); showDigitalSlide(digitalCurrent - 1); });
+        if (digitalNext) digitalNext.addEventListener("click", (e) => { e.stopPropagation(); showDigitalSlide(digitalCurrent + 1); });
+        digitalDots.forEach((dot, i) => {
+            dot.addEventListener("click", (e) => { e.stopPropagation(); showDigitalSlide(i); });
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (!digitalModal.classList.contains("open")) return;
+            if (e.key === "Escape") closeDigitalModal();
+            if (e.key === "ArrowLeft") showDigitalSlide(digitalCurrent - 1);
+            if (e.key === "ArrowRight") showDigitalSlide(digitalCurrent + 1);
+        });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+        digitalModal.addEventListener("touchstart", (e) => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+        digitalModal.addEventListener("touchend", (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchEndX - touchStartX;
+            if (Math.abs(diff) > 50) {
+                if (diff < 0) showDigitalSlide(digitalCurrent + 1);
+                else showDigitalSlide(digitalCurrent - 1);
+            }
+        }, { passive: true });
+    }
+
+    // --- POSTER SERIES Modal Lightbox with Slider 4 gambar (hanya gambar, centered) ---
+    const posterModal = document.getElementById("poster-series-modal");
+    const posterImg = document.querySelector(".poster-series-img");
+    const posterClose = document.getElementById("poster-modal-close");
+    const posterPrev = document.getElementById("poster-prev");
+    const posterNext = document.getElementById("poster-next");
+    const posterSlides = posterModal ? posterModal.querySelectorAll(".poster-slide") : [];
+    const posterDots = posterModal ? posterModal.querySelectorAll(".modal-dot") : [];
+    let posterCurrent = 0;
+
+    const showPosterSlide = (index) => {
+        if (!posterSlides.length) return;
+        posterCurrent = (index + posterSlides.length) % posterSlides.length;
+        posterSlides.forEach((slide, i) => {
+            slide.classList.toggle("active", i === posterCurrent);
+        });
+        posterDots.forEach((dot, i) => {
+            const isActive = i === posterCurrent;
+            dot.classList.toggle("active", isActive);
+            dot.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+    };
+
+    if (posterModal && posterImg && posterClose) {
+        const openPosterModal = () => {
+            showPosterSlide(0);
+            posterModal.classList.add("open");
+            document.body.style.overflow = "hidden";
+        };
+        const closePosterModal = () => {
+            posterModal.classList.remove("open");
+            const isDigitalOpen = document.getElementById("digital-illustration-modal")?.classList.contains("open");
+            const isAsaOpen = document.getElementById("asa-sushi-modal")?.classList.contains("open");
+            const isWorksOpen = document.getElementById("works-lightbox-modal")?.classList.contains("open");
+            const isModulOpen = document.getElementById("modul-modal")?.classList.contains("open");
+            const isCharacterOpen = document.getElementById("character-modal")?.classList.contains("open");
+            if (!isDigitalOpen && !isAsaOpen && !isWorksOpen && !isModulOpen && !isCharacterOpen) {
+                document.body.style.overflow = "";
+            }
+        };
+
+        posterImg.addEventListener("click", openPosterModal);
+        posterClose.addEventListener("click", closePosterModal);
+        posterModal.addEventListener("click", (e) => {
+            if (e.target === posterModal) closePosterModal();
+        });
+        if (posterPrev) posterPrev.addEventListener("click", (e) => { e.stopPropagation(); showPosterSlide(posterCurrent - 1); });
+        if (posterNext) posterNext.addEventListener("click", (e) => { e.stopPropagation(); showPosterSlide(posterCurrent + 1); });
+        posterDots.forEach((dot, i) => {
+            dot.addEventListener("click", (e) => { e.stopPropagation(); showPosterSlide(i); });
+        });
+
+        document.addEventListener("keydown", (e) => {
+            if (!posterModal.classList.contains("open")) return;
+            if (e.key === "Escape") closePosterModal();
+            if (e.key === "ArrowLeft") showPosterSlide(posterCurrent - 1);
+            if (e.key === "ArrowRight") showPosterSlide(posterCurrent + 1);
+        });
+
+        let posterTouchStartX = 0;
+        let posterTouchEndX = 0;
+        posterModal.addEventListener("touchstart", (e) => { posterTouchStartX = e.changedTouches[0].screenX; }, { passive: true });
+        posterModal.addEventListener("touchend", (e) => {
+            posterTouchEndX = e.changedTouches[0].screenX;
+            const diff = posterTouchEndX - posterTouchStartX;
+            if (Math.abs(diff) > 50) {
+                if (diff < 0) showPosterSlide(posterCurrent + 1);
+                else showPosterSlide(posterCurrent - 1);
+            }
+        }, { passive: true });
+    }
+
+    // --- Works Universal Lightbox (1 modal untuk semua Selected Works - hanya gambar) ---
+    const worksModal = document.getElementById("works-lightbox-modal");
+    const worksModalImg = document.getElementById("works-lightbox-image");
+    const worksModalClose = document.getElementById("works-lightbox-close");
+    const worksImgTriggers = document.querySelectorAll(".works-popup-img");
+
+    const openWorksModal = (src, alt) => {
+        if (!worksModal || !worksModalImg) return;
+        worksModalImg.src = src;
+        worksModalImg.alt = alt || "";
+        worksModal.classList.add("open");
+        document.body.style.overflow = "hidden";
+    };
+    const closeWorksModal = () => {
+        if (!worksModal) return;
+        worksModal.classList.remove("open");
+        const isDigitalOpen = document.getElementById("digital-illustration-modal")?.classList.contains("open");
+        const isAsaOpen = document.getElementById("asa-sushi-modal")?.classList.contains("open");
+        const isPosterOpen = document.getElementById("poster-series-modal")?.classList.contains("open");
+        const isModulOpen = document.getElementById("modul-modal")?.classList.contains("open");
+            const isCharacterOpen = document.getElementById("character-modal")?.classList.contains("open");
+        if (!isDigitalOpen && !isAsaOpen && !isPosterOpen && !isModulOpen && !isCharacterOpen) {
+            document.body.style.overflow = "";
+        }
+    };
+
+    if (worksModal && worksModalImg && worksModalClose) {
+        worksImgTriggers.forEach(img => {
+            img.addEventListener("click", () => openWorksModal(img.src, img.alt));
+        });
+
+        const worksCardTriggers = document.querySelectorAll(".works-popup-trigger[data-popup-src]");
+        worksCardTriggers.forEach(card => {
+            card.addEventListener("click", (e) => {
+                if (e.target.closest(".works-popup-img")) return;
+                const src = card.getAttribute("data-popup-src");
+                const alt = card.getAttribute("data-popup-alt") || card.querySelector("h3")?.textContent?.trim() || "Works preview";
+                if (src) openWorksModal(src, alt);
+            });
+        });
+
+        worksModalClose.addEventListener("click", closeWorksModal);
+        worksModal.addEventListener("click", (e) => {
+            if (e.target === worksModal) closeWorksModal();
+        });
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && worksModal.classList.contains("open")) {
+                closeWorksModal();
+            }
+        });
+    }
+
+    // --- MODUL Modal Lightbox with Slider 4 PDF (berurut 1-4) ---
+    const modulModal = document.getElementById("modul-modal");
+    const modulImg = document.querySelector(".modul-img");
+    const modulClose = document.getElementById("modul-modal-close");
+    const modulPrev = document.getElementById("modul-prev");
+    const modulNext = document.getElementById("modul-next");
+    const modulSlides = modulModal ? modulModal.querySelectorAll(".modul-slide") : [];
+    const modulDots = modulModal ? modulModal.querySelectorAll(".modal-dot") : [];
+    let modulCurrent = 0;
+
+    const showModulSlide = (index) => {
+        if (!modulSlides.length) return;
+        modulCurrent = (index + modulSlides.length) % modulSlides.length;
+        modulSlides.forEach((s, i) => s.classList.toggle("active", i === modulCurrent));
+        modulDots.forEach((d, i) => {
+            const a = i === modulCurrent;
+            d.classList.toggle("active", a);
+            d.setAttribute("aria-selected", a ? "true" : "false");
+        });
+    };
+
+    if (modulModal && modulImg && modulClose) {
+        const openModulModal = () => {
+            showModulSlide(0);
+            modulModal.classList.add("open");
+            document.body.style.overflow = "hidden";
+        };
+        const closeModulModal = () => {
+            modulModal.classList.remove("open");
+            const isAsaOpen = document.getElementById("asa-sushi-modal")?.classList.contains("open");
+            const isDigitalOpen = document.getElementById("digital-illustration-modal")?.classList.contains("open");
+            const isPosterOpen = document.getElementById("poster-series-modal")?.classList.contains("open");
+            const isWorksOpen = document.getElementById("works-lightbox-modal")?.classList.contains("open");
+            const isCharacterOpen = document.getElementById("character-modal")?.classList.contains("open");
+            if (!isAsaOpen && !isDigitalOpen && !isPosterOpen && !isWorksOpen && !isCharacterOpen) {
+                document.body.style.overflow = "";
+            }
+        };
+        modulImg.addEventListener("click", openModulModal);
+        modulClose.addEventListener("click", closeModulModal);
+        modulModal.addEventListener("click", (e) => {
+            if (e.target === modulModal) closeModulModal();
+        });
+        if (modulPrev) modulPrev.addEventListener("click", (e) => { e.stopPropagation(); showModulSlide(modulCurrent - 1); });
+        if (modulNext) modulNext.addEventListener("click", (e) => { e.stopPropagation(); showModulSlide(modulCurrent + 1); });
+        modulDots.forEach((dot, i) => dot.addEventListener("click", (e) => { e.stopPropagation(); showModulSlide(i); }));
+        document.addEventListener("keydown", (e) => {
+            if (!modulModal.classList.contains("open")) return;
+            if (e.key === "Escape") closeModulModal();
+            if (e.key === "ArrowLeft") showModulSlide(modulCurrent - 1);
+            if (e.key === "ArrowRight") showModulSlide(modulCurrent + 1);
+        });
+        let mx = 0;
+        modulModal.addEventListener("touchstart", (e) => { mx = e.changedTouches[0].screenX; }, { passive: true });
+        modulModal.addEventListener("touchend", (e) => {
+            const dx = e.changedTouches[0].screenX - mx;
+            if (Math.abs(dx) > 50) {
+                if (dx < 0) showModulSlide(modulCurrent + 1);
+                else showModulSlide(modulCurrent - 1);
+            }
+        }, { passive: true });
+    }
+
+    // --- CHARACTER 2D & 3D Modal Lightbox with Slider 5 gambar (2D dulu, lalu 3D) ---
+    const characterModal = document.getElementById("character-modal");
+    const characterImg = document.querySelector(".character-img");
+    const characterClose = document.getElementById("character-modal-close");
+    const characterPrev = document.getElementById("character-prev");
+    const characterNext = document.getElementById("character-next");
+    const characterSlides = characterModal ? characterModal.querySelectorAll(".digital-slide") : [];
+    const characterDots = characterModal ? characterModal.querySelectorAll(".modal-dot") : [];
+    let characterCurrent = 0;
+
+    const showCharacterSlide = (index) => {
+        if (!characterSlides.length) return;
+        characterCurrent = (index + characterSlides.length) % characterSlides.length;
+        characterSlides.forEach((slide, i) => slide.classList.toggle("active", i === characterCurrent));
+        characterDots.forEach((dot, i) => {
+            const isActive = i === characterCurrent;
+            dot.classList.toggle("active", isActive);
+            dot.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+    };
+
+    if (characterModal && characterImg && characterClose) {
+        const openCharacterModal = () => {
+            showCharacterSlide(0);
+            characterModal.classList.add("open");
+            document.body.style.overflow = "hidden";
+        };
+        const closeCharacterModal = () => {
+            characterModal.classList.remove("open");
+            const isAsaOpen = document.getElementById("asa-sushi-modal")?.classList.contains("open");
+            const isDigitalOpen = document.getElementById("digital-illustration-modal")?.classList.contains("open");
+            const isPosterOpen = document.getElementById("poster-series-modal")?.classList.contains("open");
+            const isWorksOpen = document.getElementById("works-lightbox-modal")?.classList.contains("open");
+            const isModulOpen = document.getElementById("modul-modal")?.classList.contains("open");
+            if (!isAsaOpen && !isDigitalOpen && !isPosterOpen && !isWorksOpen && !isModulOpen) {
+                document.body.style.overflow = "";
+            }
+        };
+        characterImg.addEventListener("click", openCharacterModal);
+        characterClose.addEventListener("click", closeCharacterModal);
+        characterModal.addEventListener("click", (e) => {
+            if (e.target === characterModal) closeCharacterModal();
+        });
+        if (characterPrev) characterPrev.addEventListener("click", (e) => { e.stopPropagation(); showCharacterSlide(characterCurrent - 1); });
+        if (characterNext) characterNext.addEventListener("click", (e) => { e.stopPropagation(); showCharacterSlide(characterCurrent + 1); });
+        characterDots.forEach((dot, i) => dot.addEventListener("click", (e) => { e.stopPropagation(); showCharacterSlide(i); }));
+        document.addEventListener("keydown", (e) => {
+            if (!characterModal.classList.contains("open")) return;
+            if (e.key === "Escape") closeCharacterModal();
+            if (e.key === "ArrowLeft") showCharacterSlide(characterCurrent - 1);
+            if (e.key === "ArrowRight") showCharacterSlide(characterCurrent + 1);
+        });
+        let chTouchStartX = 0;
+        characterModal.addEventListener("touchstart", (e) => { chTouchStartX = e.changedTouches[0].screenX; }, { passive: true });
+        characterModal.addEventListener("touchend", (e) => {
+            const diff = e.changedTouches[0].screenX - chTouchStartX;
+            if (Math.abs(diff) > 50) {
+                if (diff < 0) showCharacterSlide(characterCurrent + 1);
+                else showCharacterSlide(characterCurrent - 1);
+            }
+        }, { passive: true });
+    }
+</script>
+
+<!-- LOGO DESIGN Modal - Slider -->
+<div id="asa-sushi-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="LOGO DESIGN gallery">
+    <div class="modal-content digital-modal-slider">
+        <button id="modal-close" class="modal-close" aria-label="Close modal">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">close</span>
+        </button>
+        <button id="logo-prev" class="modal-nav modal-prev" aria-label="Previous image">
+            <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <button id="logo-next" class="modal-nav modal-next" aria-label="Next image">
+            <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+        <div class="logo-slide active">
+            <img class="modal-image" src="../IMAGE/ASA SUSHI LOGO-01.jpg" alt="LOGO DESIGN - ASA SUSHI Logo">
+        </div>
+        <div class="logo-slide">
+            <img class="modal-image" src="../IMAGE/LOGO/LOGO METHOD_final.jpg" alt="LOGO DESIGN - Logo Method">
+        </div>
+        <div class="logo-slide">
+            <img class="modal-image" src="../IMAGE/LOGO/Print.jpg" alt="LOGO DESIGN - Print Version">
+        </div>
+        <div class="modal-dots" role="tablist" aria-label="Image navigation">
+            <button class="modal-dot active" data-slide="0" aria-label="Go to image 1" role="tab" aria-selected="true"></button>
+            <button class="modal-dot" data-slide="1" aria-label="Go to image 2" role="tab" aria-selected="false"></button>
+            <button class="modal-dot" data-slide="2" aria-label="Go to image 3" role="tab" aria-selected="false"></button>
+        </div>
+    </div>
+</div>
+
+<!-- DIGITAL ILLUSTRATION Modal - Slider (hanya gambar) -->
+<div id="digital-illustration-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Digital Illustration gallery">
+    <div class="modal-content digital-modal-slider">
+        <button id="digital-modal-close" class="modal-close" aria-label="Close modal">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">close</span>
+        </button>
+        <button id="digital-prev" class="modal-nav modal-prev" aria-label="Previous image">
+            <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <button id="digital-next" class="modal-nav modal-next" aria-label="Next image">
+            <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+        <div class="digital-slide active">
+            <img class="modal-image" src="../IMAGE/digital-ilustration.jpg" alt="Digital Illustration - artwork 1">
+        </div>
+        <div class="digital-slide">
+            <img class="modal-image" src="../IMAGE/SEMESTAA.jpg" alt="Semesta artwork - artwork 2">
+        </div>
+        <div class="digital-slide">
+            <img class="modal-image" src="../IMAGE/ilustrasi%202/Maskot%20Cap%20Roar.png" alt="Maskot Cap Roar - artwork 3">
+        </div>
+        <div class="digital-slide">
+            <img class="modal-image" src="../IMAGE/ilustrasi%202/Screenshot%202026-09-18%20071038.png" alt="Ilustrasi 2 - artwork 4">
+        </div>
+        <div class="modal-dots" role="tablist" aria-label="Image navigation">
+            <button class="modal-dot active" data-slide="0" aria-label="Go to image 1" role="tab" aria-selected="true"></button>
+            <button class="modal-dot" data-slide="1" aria-label="Go to image 2" role="tab" aria-selected="false"></button>
+            <button class="modal-dot" data-slide="2" aria-label="Go to image 3" role="tab" aria-selected="false"></button>
+            <button class="modal-dot" data-slide="3" aria-label="Go to image 4" role="tab" aria-selected="false"></button>
+        </div>
+    </div>
+</div>
+
+<!-- POSTER SERIES Modal - Slider 4 gambar (hanya gambar) -->
+<div id="poster-series-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Poster Series gallery">
+    <div class="modal-content digital-modal-slider">
+        <button id="poster-modal-close" class="modal-close" aria-label="Close modal">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">close</span>
+        </button>
+        <button id="poster-prev" class="modal-nav modal-prev" aria-label="Previous image">
+            <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <button id="poster-next" class="modal-nav modal-next" aria-label="Next image">
+            <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+        <div class="poster-slide active">
+            <img class="modal-image" src="../IMAGE/POSTER SERIES/POSTER PUKIS MUNCHIE-01.jpg" alt="Poster Series - Pukis Munchie 1">
+        </div>
+        <div class="poster-slide">
+            <img class="modal-image" src="../IMAGE/POSTER SERIES/POSTER FOTO PRODUK_OLATTE.jpg" alt="Poster Series - Olattte 2">
+        </div>
+        <div class="poster-slide">
+            <img class="modal-image" src="../IMAGE/POSTER SERIES/Poster Edukasi Literasi Membaca dalam Gaya Kartun Ilustrasi Oranye dan Cokelat.jpg" alt="Poster Series - Literasi 3">
+        </div>
+        <div class="poster-slide">
+            <img class="modal-image" src="../IMAGE/POSTER SERIES/Biru Kuning Ilustrasi Hari Tani Nasional Kiriman Instagram (1).png" alt="Poster Series - Hari Tani 4">
+        </div>
+        <div class="modal-dots" role="tablist" aria-label="Image navigation">
+            <button class="modal-dot active" data-slide="0" aria-label="Go to image 1" role="tab" aria-selected="true"></button>
+            <button class="modal-dot" data-slide="1" aria-label="Go to image 2" role="tab" aria-selected="false"></button>
+            <button class="modal-dot" data-slide="2" aria-label="Go to image 3" role="tab" aria-selected="false"></button>
+            <button class="modal-dot" data-slide="3" aria-label="Go to image 4" role="tab" aria-selected="false"></button>
+        </div>
+    </div>
+</div>
+
+<!-- Works Universal Lightbox - 1 modal untuk semua Selected Works (hanya gambar) -->
+<div id="works-lightbox-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Works preview">
+    <div class="modal-content">
+        <button id="works-lightbox-close" class="modal-close" aria-label="Close modal">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">close</span>
+        </button>
+        <img id="works-lightbox-image" class="modal-image" src="" alt="">
+    </div>
+</div>
+
+<!-- MODUL Modal - Slider PDF (tanpa MODUL 3) -->
+<div id="modul-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="MODUL gallery">
+    <div class="modal-content digital-modal-slider">
+        <button id="modul-modal-close" class="modal-close" aria-label="Close modal">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">close</span>
+        </button>
+        <button id="modul-prev" class="modal-nav modal-prev" aria-label="Previous modul">
+            <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <button id="modul-next" class="modal-nav modal-next" aria-label="Next modul">
+            <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+        <div class="modul-slide active">
+            <iframe class="modal-image modul-pdf-frame" src="../IMAGE/MODUL/MODUL-1.pdf" title="MODUL 1"></iframe>
+            <div class="modul-caption">MODUL 1</div>
+            <div class="flex flex-wrap gap-sm justify-center">
+                <a href="../IMAGE/MODUL/MODUL-1.pdf" target="_blank" rel="noopener" class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-md py-sm rounded-full border-2 border-white font-bold uppercase tracking-wide hover:scale-105 transition-transform">BUKA PDF</a>
+                <a href="../IMAGE/MODUL/MODUL-1.pdf" download class="bg-surface text-on-surface font-label-sm text-label-sm px-md py-sm rounded-full border-2 border-white font-bold uppercase tracking-wide hover:scale-105 transition-transform">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="modul-slide">
+            <iframe class="modal-image modul-pdf-frame" src="../IMAGE/MODUL/MODUL-2.pdf" title="MODUL 2"></iframe>
+            <div class="modul-caption">MODUL 2</div>
+            <div class="flex flex-wrap gap-sm justify-center">
+                <a href="../IMAGE/MODUL/MODUL-2.pdf" target="_blank" rel="noopener" class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-md py-sm rounded-full border-2 border-white font-bold uppercase tracking-wide hover:scale-105 transition-transform">BUKA PDF</a>
+                <a href="../IMAGE/MODUL/MODUL-2.pdf" download class="bg-surface text-on-surface font-label-sm text-label-sm px-md py-sm rounded-full border-2 border-white font-bold uppercase tracking-wide hover:scale-105 transition-transform">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="modul-slide">
+            <iframe class="modal-image modul-pdf-frame" src="../IMAGE/MODUL/MODUL-4.pdf" title="MODUL 4"></iframe>
+            <div class="modul-caption">MODUL 4</div>
+            <div class="flex flex-wrap gap-sm justify-center">
+                <a href="../IMAGE/MODUL/MODUL-4.pdf" target="_blank" rel="noopener" class="bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm px-md py-sm rounded-full border-2 border-white font-bold uppercase tracking-wide hover:scale-105 transition-transform">BUKA PDF</a>
+                <a href="../IMAGE/MODUL/MODUL-4.pdf" download class="bg-surface text-on-surface font-label-sm text-label-sm px-md py-sm rounded-full border-2 border-white font-bold uppercase tracking-wide hover:scale-105 transition-transform">DOWNLOAD</a>
+            </div>
+        </div>
+        <div class="modal-dots" role="tablist" aria-label="Modul navigation">
+            <button class="modal-dot active" data-slide="0" aria-label="Go to modul 1" role="tab" aria-selected="true"></button>
+            <button class="modal-dot" data-slide="1" aria-label="Go to modul 2" role="tab" aria-selected="false"></button>
+            <button class="modal-dot" data-slide="2" aria-label="Go to modul 4" role="tab" aria-selected="false"></button>
+        </div>
+    </div>
+</div>
+
+<!-- CHARACTER 2D & 3D Modal - Slider 5 gambar (2D dulu, lalu 3D) -->
+<div id="character-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-label="Character 2D and 3D gallery">
+    <div class="modal-content digital-modal-slider">
+        <button id="character-modal-close" class="modal-close" aria-label="Close modal">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">close</span>
+        </button>
+        <button id="character-prev" class="modal-nav modal-prev" aria-label="Previous image">
+            <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <button id="character-next" class="modal-nav modal-next" aria-label="Next image">
+            <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+        <div class="digital-slide active">
+            <img class="modal-image" src="../IMAGE/Karakter%202D%20%26%203D/karakter%20.png" alt="Character 2D - karakter 1">
+        </div>
+        <div class="digital-slide">
+            <img class="modal-image" src="../IMAGE/Karakter%202D%20%26%203D/Karakter%202%20.png" alt="Character 2D - karakter 2">
+        </div>
+        <div class="digital-slide">
+            <img class="modal-image" src="../IMAGE/Karakter%202D%20%26%203D/3D%20CHIBI%20BLENDER.png" alt="Character 3D - Chibi Blender">
+        </div>
+        <div class="digital-slide">
+            <img class="modal-image" src="../IMAGE/Karakter%202D%20%26%203D/PEDANG%20BLENDER.png" alt="Character 3D - Pedang Blender">
+        </div>
+        <div class="digital-slide">
+            <img class="modal-image" src="../IMAGE/Karakter%202D%20%26%203D/ULAT%20FRISCA.png" alt="Character 3D - Ulat Frisca">
+        </div>
+        <div class="modal-dots" role="tablist" aria-label="Character navigation">
+            <button class="modal-dot active" data-slide="0" aria-label="Go to character 1" role="tab" aria-selected="true"></button>
+            <button class="modal-dot" data-slide="1" aria-label="Go to character 2" role="tab" aria-selected="false"></button>
+            <button class="modal-dot" data-slide="2" aria-label="Go to character 3" role="tab" aria-selected="false"></button>
+            <button class="modal-dot" data-slide="3" aria-label="Go to character 4" role="tab" aria-selected="false"></button>
+            <button class="modal-dot" data-slide="4" aria-label="Go to character 5" role="tab" aria-selected="false"></button>
+        </div>
+    </div>
+</div>
+</body></html>
